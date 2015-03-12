@@ -1,4 +1,4 @@
-﻿=== YITH WooCommerce Request A Quote ===
+=== YITH WooCommerce Request A Quote ===
 
 Contributors: yithemes
 Tags: request a quote, quote, yithemes, message, woocommerce, shop, ecommece, e-commerce
@@ -64,9 +64,9 @@ Yes, in Yit Plugins->Request A Quote->Settings page, you can choose hide or show
 == Screenshots ==
 
 1. Setting Options page
-2. Requesta a quote button in single page
+2. Request a quote button in single page
 3. Request a quote list
-4. Requesta a Quote Email Settings page
+4. Request a Quote Email Settings page
 
 == Changelog ==
 = 1.0.0 =
