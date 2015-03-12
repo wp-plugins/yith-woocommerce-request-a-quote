@@ -1,0 +1,7 @@
+.ajax-loading,
+.product-remove a.yith-ywraq-item-remove.remove{
+    display: inline-block;
+}
+.product-remove .ajax-loading{
+    vertical-align: text-bottom;
+}
