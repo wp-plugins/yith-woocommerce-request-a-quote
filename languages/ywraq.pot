@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: YIT WooCommerce Request a Quote\n"
-"POT-Creation-Date: 2015-03-12 10:44+0100\n"
-"PO-Revision-Date: 2015-03-12 10:44+0100\n"
+"POT-Creation-Date: 2015-03-30 10:28+0100\n"
+"PO-Revision-Date: 2015-03-30 10:28+0100\n"
 "Last-Translator: \n"
 "Language-Team: Yithemes <plugins@yithemes.com>\n"
 "Language: en\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n!=1;\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../class.yith-request-quote-admin.php:146
-#: ../class.yith-request-quote-admin.php:246
+#: ../includes/class.yith-request-quote-admin.php:149
+#: ../includes/class.yith-request-quote-admin.php:253
 #: ../plugin-fw/lib/yit-cpt-unlimited.php:1048
 #: ../plugin-fw/lib/yit-cpt-unlimited.php:1196
 #: ../plugin-fw/lib/yit-cpt-unlimited.php:1202
@@ -26,145 +26,153 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: ../class.yith-request-quote-admin.php:156
-#: ../class.yith-request-quote-admin.php:157
-msgid "Request A Quote"
+#: ../includes/class.yith-request-quote-admin.php:153
+#: ../includes/class.yith-request-quote-admin.php:255
+msgid "Premium Version"
 msgstr ""
 
-#: ../class.yith-request-quote-admin.php:201
+#: ../includes/class.yith-request-quote-admin.php:156
+msgid "Layout"
+msgstr ""
+
+#: ../includes/class.yith-request-quote-admin.php:157
+msgid "Exclusion List"
+msgstr ""
+
+#: ../includes/class.yith-request-quote-admin.php:163
+#: ../includes/class.yith-request-quote-admin.php:164
+#: ../includes/class.yith-request-quote-admin.php:209
+msgid "Request a Quote"
+msgstr ""
+
+#: ../includes/class.yith-request-quote-admin.php:208
 msgctxt "page_slug"
 msgid "request-quote"
 msgstr ""
 
-#: ../class.yith-request-quote-admin.php:202
-msgid "Request a Quote"
-msgstr ""
-
-#: ../class.yith-request-quote-admin.php:248
-msgid "Premium Version"
-msgstr ""
-
-#: ../class.yith-request-quote-admin.php:274
+#: ../includes/class.yith-request-quote-admin.php:281
 msgid "Plugin Documentation"
 msgstr ""
 
-#: ../class.yith-request-quote-frontend.php:117
+#: ../includes/class.yith-request-quote-frontend.php:130
 msgid "Your list is empty"
 msgstr ""
 
-#: ../class.yith-request-quote-frontend.php:159
-#: ../class.yith-request-quote.php:421 ../class.yith-request-quote.php:465
+#: ../includes/class.yith-request-quote-frontend.php:179
+#: ../includes/class.yith-request-quote.php:415
+#: ../includes/class.yith-request-quote.php:458
 msgid "Browse the list"
 msgstr ""
 
-#: ../class.yith-request-quote.php:251 ../class.yith-request-quote.php:411
-#: ../class.yith-request-quote.php:458
+#: ../includes/class.yith-request-quote.php:246
+#: ../includes/class.yith-request-quote.php:405
+#: ../includes/class.yith-request-quote.php:451
 msgid "Product already in the list."
 msgstr ""
 
-#: ../class.yith-request-quote.php:401
-msgid "Error occurred while adding product to request a quote list."
+#: ../includes/class.yith-request-quote.php:395
+msgid "Error occurred while adding product to Request a Quote list."
 msgstr ""
 
-#: ../class.yith-request-quote.php:408
+#: ../includes/class.yith-request-quote.php:402
 msgid "Product added!"
 msgstr ""
 
-#: ../class.yith-request-quote.php:524
+#: ../includes/class.yith-request-quote.php:516
 msgid "Please enter a name"
 msgstr ""
 
-#: ../class.yith-request-quote.php:528
+#: ../includes/class.yith-request-quote.php:520
 msgid "Please enter a valid email"
 msgstr ""
 
-#: ../class.yith-request-quote.php:532
+#: ../includes/class.yith-request-quote.php:524
 msgid "Your list is empty, add products to the list to send a request"
 msgstr ""
 
-#: ../class.yith-request-quote.php:549
-#: ../includes/class.yith-ywraq-send-email.php:76
+#: ../includes/class.yith-request-quote.php:543
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:76
 msgid "There was a problem in sending your request. Please try again."
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:31
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:31
 msgid "Email to request a quote"
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:32
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:32
 msgid "This email is sent when a user clicks on \"Request a quote\" button"
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:34
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:34
 msgid "Request a quote"
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:35
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:35
 msgid "[Request a quote]"
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:74
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:74
 msgid "Your request has been sent successfully"
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:144
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:144
 msgid "Subject"
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:146
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:146
 #, php-format
 msgid ""
 "This field lets you modify the email subject line. Leave it blank to use "
 "default subject: <code>%s</code>."
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:151
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:151
 msgid "Recipient(s)"
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:153
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:153
 #, php-format
 msgid ""
 "Enter recipients (comma separated) for this email. Defaults to <code>%s</"
 "code>"
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:158
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:158
 msgid "Send CC copy"
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:160
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:160
 msgid "Send a carbon copy to the user"
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:164
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:164
 msgid "Email Heading"
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:166
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:166
 #, php-format
 msgid ""
 "This field lets you modify the main heading contained within the email "
 "notification. Leave blank to use the default heading: <code>%s</code>."
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:171
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:171
 msgid "Email type"
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:173
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:173
 msgid "Choose format for the email to be sent."
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:177
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:177
 msgid "Plain text"
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:178
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:178
 msgid "HTML"
 msgstr ""
 
-#: ../includes/class.yith-ywraq-send-email.php:179
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:179
 msgid "Multipart"
 msgstr ""
 
@@ -362,7 +370,7 @@ msgstr ""
 #: ../plugin-fw/lib/yit-cpt-unlimited.php:1482
 #: ../plugin-fw/templates/metaboxes/types/customtabs.php:46
 #: ../plugin-fw/templates/metaboxes/types/customtabs.php:90
-#: ../templates/request-quote-form.php:25
+#: ../templates/request-quote-form.php:24
 msgid "Name"
 msgstr ""
 
@@ -375,7 +383,7 @@ msgstr ""
 msgid "Add with multiupload"
 msgstr ""
 
-#: ../plugin-fw/lib/yit-plugin-panel-wc.php:315
+#: ../plugin-fw/lib/yit-plugin-panel-wc.php:295
 msgid "The changes you have made will be lost if you leave this page."
 msgstr ""
 
@@ -383,74 +391,73 @@ msgstr ""
 msgid "Plugin Settings"
 msgstr ""
 
-#: ../plugin-fw/lib/yit-plugin-panel.php:94
+#: ../plugin-fw/lib/yit-plugin-panel.php:91
 #: ../plugin-fw/lib/yit-plugin-subpanel.php:101
 msgid "YIT Plugins"
 msgstr ""
 
-#: ../plugin-fw/lib/yit-plugin-panel.php:273
+#: ../plugin-fw/lib/yit-plugin-panel.php:280
 #: ../plugin-fw/lib/yit-plugin-subpanel.php:142
 #: ../plugin-fw/templates/panel/woocommerce/woocommerce-form.php:5
 msgid "Save Changes"
 msgstr ""
 
-#: ../plugin-fw/lib/yit-plugin-panel.php:276
+#: ../plugin-fw/lib/yit-plugin-panel.php:283
 #: ../plugin-fw/templates/panel/woocommerce/woocommerce-form.php:8
 msgid ""
 "If you continue with this action, you will reset all options in this page."
 msgstr ""
 
-#: ../plugin-fw/lib/yit-plugin-panel.php:278
+#: ../plugin-fw/lib/yit-plugin-panel.php:285
 #: ../plugin-fw/lib/yit-plugin-subpanel.php:147
-#: ../plugin-fw/templates/panel/woocommerce/woocommerce-form.php:10
-msgid "Reset Defaults"
+msgid "Reset to Default"
 msgstr ""
 
-#: ../plugin-fw/lib/yit-plugin-panel.php:278
+#: ../plugin-fw/lib/yit-plugin-panel.php:285
 #: ../plugin-fw/lib/yit-plugin-subpanel.php:147
 #: ../plugin-fw/templates/panel/woocommerce/woocommerce-form.php:10
 msgid "Are you sure?"
 msgstr ""
 
-#: ../plugin-fw/lib/yit-plugin-panel.php:412
+#: ../plugin-fw/lib/yit-plugin-panel.php:419
 msgid ""
 "The element you have entered already exists. Please, enter another name."
 msgstr ""
 
-#: ../plugin-fw/lib/yit-plugin-panel.php:413
+#: ../plugin-fw/lib/yit-plugin-panel.php:420
 msgid "Settings saved"
 msgstr ""
 
-#: ../plugin-fw/lib/yit-plugin-panel.php:414
+#: ../plugin-fw/lib/yit-plugin-panel.php:421
 msgid "Settings reset"
 msgstr ""
 
-#: ../plugin-fw/lib/yit-plugin-panel.php:415
+#: ../plugin-fw/lib/yit-plugin-panel.php:422
 msgid "Element deleted correctly."
 msgstr ""
 
-#: ../plugin-fw/lib/yit-plugin-panel.php:416
-#: ../plugin-fw/lib/yit-plugin-panel.php:417
+#: ../plugin-fw/lib/yit-plugin-panel.php:423
+#: ../plugin-fw/lib/yit-plugin-panel.php:424
 msgid "Element updated correctly."
 msgstr ""
 
-#: ../plugin-fw/lib/yit-plugin-panel.php:418
+#: ../plugin-fw/lib/yit-plugin-panel.php:425
 msgid "Database imported correctly."
 msgstr ""
 
-#: ../plugin-fw/lib/yit-plugin-panel.php:419
+#: ../plugin-fw/lib/yit-plugin-panel.php:426
 msgid "An error has occurred during import. Please try again."
 msgstr ""
 
-#: ../plugin-fw/lib/yit-plugin-panel.php:420
+#: ../plugin-fw/lib/yit-plugin-panel.php:427
 msgid "The added file is not valid."
 msgstr ""
 
-#: ../plugin-fw/lib/yit-plugin-panel.php:421
+#: ../plugin-fw/lib/yit-plugin-panel.php:428
 msgid "Sorry, import is disabled."
 msgstr ""
 
-#: ../plugin-fw/lib/yit-plugin-panel.php:422
+#: ../plugin-fw/lib/yit-plugin-panel.php:429
 msgid "Sorting successful."
 msgstr ""
 
@@ -1069,39 +1076,76 @@ msgstr ""
 msgid "Italic bold"
 msgstr ""
 
-#: ../plugin-options/settings-options.php:43
+#: ../plugin-fw/templates/panel/woocommerce/woocommerce-form.php:10
+msgid "Reset Defaults"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:21
+msgid "Upgrade to the PREMIUM VERSION"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:24
+msgid "YITH Woocommerce Request A Quote"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:25
+msgid "Discover the Advanced Features"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:26
+msgid ""
+"Upgrade to the PREMIUM VERSION\n"
+"of YITH Woocommerce Request A Quote to benefit from all features!"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:31
+msgid "YITH WooCommerce Request A Quote"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:33
+msgid "Get Support and Pro Features"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:34
+msgid ""
+"By purchasing the premium version of the plugin, you will benefit from the "
+"advanced features of the product and you will get one year of free update "
+"and support through our platform available 24h/24."
+msgstr ""
+
+#: ../plugin-options/settings-options.php:44
 msgid "Request a Quote - General settings"
 msgstr ""
 
-#: ../plugin-options/settings-options.php:49
+#: ../plugin-options/settings-options.php:50
 msgid "Request Quote Page"
 msgstr ""
 
-#: ../plugin-options/settings-options.php:50
+#: ../plugin-options/settings-options.php:51
 msgid "Page contents: [yith_ywraq_request_quote]"
 msgstr ""
 
-#: ../plugin-options/settings-options.php:59
+#: ../plugin-options/settings-options.php:60
 msgid "Button type"
 msgstr ""
 
-#: ../plugin-options/settings-options.php:64
+#: ../plugin-options/settings-options.php:65
 msgid "Link"
 msgstr ""
 
-#: ../plugin-options/settings-options.php:65
+#: ../plugin-options/settings-options.php:66
 msgid "Button"
 msgstr ""
 
-#: ../plugin-options/settings-options.php:71
+#: ../plugin-options/settings-options.php:72
 msgid "Button/Link text"
 msgstr ""
 
-#: ../plugin-options/settings-options.php:75
+#: ../plugin-options/settings-options.php:76
 msgid "Add to quote"
 msgstr ""
 
-#: ../plugin-options/settings-options.php:79
+#: ../plugin-options/settings-options.php:80
 msgid "Hide \"Add to cart\" button"
 msgstr ""
 
@@ -1158,19 +1202,19 @@ msgstr ""
 msgid "Subtotal"
 msgstr ""
 
-#: ../templates/request-quote-form.php:20
+#: ../templates/request-quote-form.php:19
 msgid "Send the request"
 msgstr ""
 
-#: ../templates/request-quote-form.php:35
+#: ../templates/request-quote-form.php:41
 msgid "Message"
 msgstr ""
 
-#: ../templates/request-quote-form.php:36
+#: ../templates/request-quote-form.php:42
 msgid "Notes on your request..."
 msgstr ""
 
-#: ../templates/request-quote-form.php:41
+#: ../templates/request-quote-form.php:47
 msgid "Send Your Request"
 msgstr ""
 
@@ -1196,7 +1240,7 @@ msgid ""
 "while you are using the premium one."
 msgstr ""
 
-#: ../yith-woocommerce-request-a-quote.php:101
+#: ../yith-woocommerce-request-a-quote.php:105
 msgid ""
 "YITH Woocommerce Request A Quote is enabled but not effective. It requires "
 "Woocommerce in order to work."

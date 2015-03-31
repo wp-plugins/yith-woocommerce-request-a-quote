@@ -9,7 +9,7 @@ if ( !defined( 'ABSPATH' ) || !defined( 'YITH_YWRAQ_VERSION' ) ) {
  * @class   YITH_Request_Quote
  * @package YITH Woocommerce Request A Quote
  * @since   1.0.0
- * @author  Yithemess
+ * @author  Yithemes
  */
 if ( !class_exists( 'YITH_Request_Quote' ) ) {
 
@@ -56,7 +56,6 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
          * @since  1.0.0
          * @author Emanuela Castorina
          */
-
         public function __construct() {
 
             $this->session_class = new YITH_YWRAQ_Session();
@@ -105,13 +104,9 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
          */
         public function plugin_fw_loader() {
             if ( !defined( 'YIT' ) || !defined( 'YIT_CORE_PLUGIN' ) ) {
-                require_once( 'plugin-fw/yit-plugin.php' );
+                require_once( YITH_YWRAQ_DIR.'plugin-fw/yit-plugin.php' );
             }
         }
-
-
-
-
 
         /**
          * Get request quote list
@@ -324,7 +319,6 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
 
         }
 
-
         /**
          * Remove an item form the request list
          */
@@ -398,7 +392,7 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
             $is_valid = isset( $_POST['wp_nonce'] ) && $product_id && wp_verify_nonce( $_POST['wp_nonce'], 'add-request-quote-' . $product_id ) && $is_valid_variation;
 
             if ( !$is_valid ) {
-                $errors[] = __( 'Error occurred while adding product to request a quote list.', 'ywraq' );
+                $errors[] = __( 'Error occurred while adding product to Request a Quote list.', 'ywraq' );
             }
             else {
                 $return = $this->add_item( $_POST );
@@ -441,7 +435,6 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
             }
             die();
         }
-
 
         /**
          * Check if an element exist the list in ajax mode
@@ -503,7 +496,6 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
             }
         }
 
-
         /**
          * Get all errors in HTML mode or simple string.
          *
@@ -511,8 +503,8 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
          * @since 1.0.0
          */
         public function send_message() {
-
             if( ! isset( $_POST['rqa_name'] ) ) return;
+
 
             $errors = array();
 
@@ -537,10 +529,12 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
                     $args = array(
                         'user_name'    => $_POST['rqa_name'],
                         'user_email'   => $_POST['rqa_email'],
-                        'user_message' => $_POST['rqa_message']
+                        'user_message' => $_POST['rqa_message'],
+                        'raq_content'  => YITH_Request_Quote()->get_raq_return()
                     );
-                    do_action( 'send_raq_mail', $args );
 
+                    do_action( 'ywraq_process', $args );
+                    do_action( 'send_raq_mail', $args );
                     wp_redirect( YITH_Request_Quote()->get_raq_page_url(), 301 );
                     exit();
                 }
@@ -562,7 +556,7 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
          * @since 1.0
          */
         public function add_woocommerce_emails( $emails ) {
-            $emails['YITH_YWRAQ_Send_Email'] = include( YITH_YWRAQ_INC . 'class.yith-ywraq-send-email.php' );
+            $emails['YITH_YWRAQ_Send_Email_Request_Quote'] = include( YITH_YWRAQ_INC . 'emails/class.yith-ywraq-send-email-request-quote.php' );
             return $emails;
         }
 

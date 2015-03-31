@@ -1,10 +1,10 @@
-=== YITH WooCommerce Request A Quote ===
+﻿=== YITH WooCommerce Request A Quote ===
 
 Contributors: yithemes
 Tags: request a quote, quote, yithemes, message, woocommerce, shop, ecommece, e-commerce
 Requires at least: 3.5.1
 Tested up to: 4.1.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,11 @@ Yes, in Yit Plugins->Request A Quote->Settings page, you can choose hide or show
 4. Request a Quote Email Settings page
 
 == Changelog ==
+= 1.0.1 =
+Updated: Plugin Core Framework
+Added: Translation pt_BR
+Fixed: Minor bugs
+
 = 1.0.0 =
 
 Initial release

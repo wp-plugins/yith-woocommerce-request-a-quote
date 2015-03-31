@@ -51,7 +51,7 @@ if ( !class_exists( 'YITH_YWRAQ_Admin' ) ) {
         /**
          * @var string Doc Url
          */
-        public $doc_url = 'http://yithemes.com/docs-plugins/yith-woocommerce-request-a-quote/';
+        public $doc_url = 'http://yithemes.com/docs-plugins/yith_woocommerce_request_a_quote/';
 
 
         /**
@@ -68,6 +68,7 @@ if ( !class_exists( 'YITH_YWRAQ_Admin' ) ) {
 
             return self::$instance;
         }
+
         /**
          * Constructor
          *
@@ -87,10 +88,8 @@ if ( !class_exists( 'YITH_YWRAQ_Admin' ) ) {
 
             add_action( 'init', array( $this, 'add_page' ) );
 
-
             //custom styles and javascripts
             add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles_scripts' ) );
-
 
         }
 
@@ -104,9 +103,13 @@ if ( !class_exists( 'YITH_YWRAQ_Admin' ) ) {
          * @since 1.0.0
          */
         public function enqueue_styles_scripts() {
-            $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-            wp_enqueue_script('yith_ywraq_admin', YITH_YWRAQ_ASSETS_URL . '/js/yith-ywraq-admin' . $suffix .'.js', array('jquery'), '1.0.0', true);
 
+            $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+            wp_enqueue_script( 'yith_ywraq_admin', YITH_YWRAQ_ASSETS_URL . '/js/yith-ywraq-admin' . $suffix . '.js', array( 'jquery' ), '1.0.0', true );
+
+            if ( defined( 'YITH_YWRAQ_PREMIUM' ) ) {
+                wp_enqueue_style( 'yith_ywraq_backend', YITH_YWRAQ_ASSETS_URL . '/css/backend.css' );
+            }
         }
 
 
@@ -123,7 +126,7 @@ if ( !class_exists( 'YITH_YWRAQ_Admin' ) ) {
 
             // Add a panel under YITH Plugins tab
             add_action( 'admin_menu', array( $this, 'register_panel' ), 5 );
-            //add_action( 'yith_woocommerce_request_a_quote', array( $this, 'premium_tab' ) );
+            add_action( 'yith_ywraq_premium_tab', array( $this, 'premium_tab' ) );
         }
 
         /**
@@ -146,26 +149,30 @@ if ( !class_exists( 'YITH_YWRAQ_Admin' ) ) {
                 'settings' => __( 'Settings', 'ywraq' )
             );
 
-//            if ( defined( 'YITH_YWRAQ_FREE_INIT' ) ) {
-//                $admin_tabs['premium'] = __( 'Premium', 'ywraq' );
-//            }
-            
+            if ( defined( 'YITH_YWRAQ_FREE_INIT' ) ) {
+                $admin_tabs['premium'] = __( 'Premium Version', 'ywraq' );
+            }
+            else {
+                $admin_tabs['layout']     = __( 'Layout', 'ywraq' );
+                $admin_tabs['exclusions'] = __( 'Exclusion List', 'ywraq' );
+            }
+
             $args = array(
                 'create_menu_page' => true,
                 'parent_slug'      => '',
-                'page_title'       => __( 'Request A Quote', 'ywraq' ),
-                'menu_title'       => __( 'Request A Quote', 'ywraq' ),
+                'page_title'       => __( 'Request a Quote', 'ywraq' ),
+                'menu_title'       => __( 'Request a Quote', 'ywraq' ),
                 'capability'       => 'manage_options',
                 'parent'           => '',
                 'parent_page'      => 'yit_plugin_panel',
                 'page'             => $this->_panel_page,
                 'admin-tabs'       => $admin_tabs,
-                'options-path'     => YITH_YWRAQ_DIR . 'plugin-options'
+                'options-path'     => YITH_YWRAQ_DIR . '/plugin-options'
             );
 
             /* === Fixed: not updated theme  === */
             if ( !class_exists( 'YIT_Plugin_Panel_WooCommerce' ) ) {
-                require_once( 'plugin-fw/lib/yit-plugin-panel-wc.php' );
+                require_once( YITH_YWRAQ_DIR.'/plugin-fw/lib/yit-plugin-panel-wc.php' );
             }
 
             $this->_panel = new YIT_Plugin_Panel_WooCommerce( $args );
@@ -270,7 +277,7 @@ if ( !class_exists( 'YITH_YWRAQ_Admin' ) ) {
 
         public function plugin_row_meta( $plugin_meta, $plugin_file, $plugin_data, $status ) {
 
-            if ( defined( 'YITH_YWRAQ_FREE_INIT' ) && YITH_YWRAQ_FREE_INIT == $plugin_file ) {
+            if ( defined( 'YITH_YWRAQ_INIT' ) && YITH_YWRAQ_INIT == $plugin_file ) {
                 $plugin_meta[] = '<a href="' . $this->doc_url . '" target="_blank">' . __( 'Plugin Documentation', 'ywraq' ) . '</a>';
             }
             return $plugin_meta;

@@ -130,6 +130,5 @@ jQuery(document).ready( function($){
                 }
             }
         });
-
     });
 });

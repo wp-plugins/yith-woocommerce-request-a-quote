@@ -6,24 +6,24 @@ if ( !defined( 'ABSPATH' ) || !defined( 'YITH_YWRAQ_VERSION' ) ) {
 /**
  * Implements features of YITH Woocommerce Request A Quote
  *
- * @class   YITH_YWRAQ_Send_Email
+ * @class   YITH_YWRAQ_Send_Email_Request_Quote
  * @package YITH Woocommerce Request A Quote
  * @since   1.0.0
  * @author  Yithemes
  */
-if ( !class_exists( 'YITH_YWRAQ_Send_Email' ) ) {
+if ( !class_exists( 'YITH_YWRAQ_Send_Email_Request_Quote' ) ) {
 
     /**
-     * YITH_YWRAQ_Send_Email
+     * YITH_YWRAQ_Send_Email_Request_Quote
      *
      * @since 1.0.0
      */
-    class YITH_YWRAQ_Send_Email extends WC_Email {
+    class YITH_YWRAQ_Send_Email_Request_Quote extends WC_Email {
 
         /**
          * Constructor method, used to return object of the class to WC
          *
-         * @return \YITH_YWRAQ_Send_Email
+         * @return \YITH_YWRAQ_Send_Email_Request_Quote
          * @since 1.0.0
          */
         public function __construct() {
@@ -186,4 +186,4 @@ if ( !class_exists( 'YITH_YWRAQ_Send_Email' ) ) {
 
 
 // returns instance of the mail on file include
-return new YITH_YWRAQ_Send_Email();
+return new YITH_YWRAQ_Send_Email_Request_Quote();

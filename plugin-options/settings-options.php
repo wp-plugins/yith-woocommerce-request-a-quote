@@ -17,27 +17,28 @@ return array(
 
 	'settings' => array(
 
-//        'section_general_settings_videobox'         => array(
-//            'name' => __( 'Upgrade to the PREMIUM VERSION', 'ywraq' ),
-//            'type' => 'videobox',
-//            'default' => array(
-//                'plugin_name'        => __( 'YITH Woocommerce Request A Quote', 'ywraq' ),
-//                'title_first_column' => __( 'Discover the Advanced Features', 'ywraq' ),
-//                'description_first_column' => __('Upgrade to the PREMIUM VERSION
-//of YITH Woocommerce Request A Quote to benefit from all features!', 'ywraq'),
-////                'image' => array(
-////                    'image_url'    => YITH_YWCM_ASSETS_URL.'/images/3.png',
-////                    'image_link'    => 'http://yithemes.com/themes/plugins/yith-woocommerce-cart-messages/',
-////                ),
-//                'title_second_column' => __( 'Get Support and Pro Features', 'ywraq' ),
-//                'description_second_column' => __('By purchasing the premium version of the plugin, you will benefit from the advanced features of the product and you will get one year of free update and support through our platform available 24h/24.', 'ywraq'),
-//                'button' => array(
-//                    'href' => 'http://yithemes.com/themes/plugins/yith-woocommerce-request-a-quote/',
-//                    'title' => 'Get Support and Pro Features'
-//                )
-//            ),
-//            'id'   => 'yith_wraq_general_videobox'
-//        ),
+        'section_general_settings_videobox'         => array(
+            'name' => __( 'Upgrade to the PREMIUM VERSION', 'ywraq' ),
+            'type' => 'videobox',
+            'default' => array(
+                'plugin_name'        => __( 'YITH Woocommerce Request A Quote', 'ywraq' ),
+                'title_first_column' => __( 'Discover the Advanced Features', 'ywraq' ),
+                'description_first_column' => __('Upgrade to the PREMIUM VERSION
+of YITH Woocommerce Request A Quote to benefit from all features!', 'ywraq'),
+                'video' => array(
+                    'video_id'           => '123722478',
+                    'video_image_url'    =>  YITH_YWRAQ_ASSETS_URL.'/images/request-a-quote.jpg',
+                    'video_description'  => __( 'YITH WooCommerce Request A Quote', 'yit' ),
+                ),
+                'title_second_column' => __( 'Get Support and Pro Features', 'ywraq' ),
+                'description_second_column' => __('By purchasing the premium version of the plugin, you will benefit from the advanced features of the product and you will get one year of free update and support through our platform available 24h/24.', 'ywraq'),
+                'button' => array(
+                    'href' => 'http://yithemes.com/themes/plugins/yith-woocommerce-request-a-quote/',
+                    'title' => 'Get Support and Pro Features'
+                )
+            ),
+            'id'   => 'yith_wraq_general_videobox'
+        ),
 
 		'section_general_settings'     => array(
 			'name' => __( 'Request a Quote - General settings', 'ywraq' ),

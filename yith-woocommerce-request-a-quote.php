@@ -12,7 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 /*
  * @package YITH Woocommerce Request A Quote
- * @since   1.0.0
+ * @since   1.0.1
  * @author  Yithemes
  */
 
@@ -49,20 +49,19 @@ if ( !function_exists( 'yith_plugin_registration_hook' ) ) {
 register_activation_hook( __FILE__, 'yith_plugin_registration_hook' );
 
 
-
-// Load YWCM text domain ___________________________________
-load_plugin_textdomain( 'ywraq', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-
-
 // Define constants ________________________________________
 if ( defined( 'YITH_YWRAQ_VERSION' ) ) {
     return;
 }else{
-    define( 'YITH_YWRAQ_VERSION', '1.0.0' );
+    define( 'YITH_YWRAQ_VERSION', '1.0.1' );
 }
 
 if ( ! defined( 'YITH_YWRAQ_FREE_INIT' ) ) {
     define( 'YITH_YWRAQ_FREE_INIT', plugin_basename( __FILE__ ) );
+}
+
+if ( ! defined( 'YITH_YWRAQ_INIT' ) ) {
+    define( 'YITH_YWRAQ_INIT', plugin_basename( __FILE__ ) );
 }
 
 if ( ! defined( 'YITH_YWRAQ_FILE' ) ) {
@@ -93,8 +92,9 @@ if ( ! defined( 'YITH_YWRAQ_INC' ) ) {
 function yith_ywraq_constructor() {
 
     // Woocommerce installation check _________________________
-
     if ( !function_exists( 'WC' ) ) {
+
+
         function yith_ywraq_install_woocommerce_admin_notice() {
             ?>
             <div class="error">
@@ -107,6 +107,9 @@ function yith_ywraq_constructor() {
         return;
     }
 
+    // Load YWCM text domain ___________________________________
+    load_plugin_textdomain( 'ywraq', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+
     // Load required classes and functions
 
     if( ! class_exists('WC_Session') ){
@@ -117,12 +120,12 @@ function yith_ywraq_constructor() {
     require_once( YITH_YWRAQ_INC . 'class.yith-ywraq-session.php' );
     require_once( YITH_YWRAQ_INC . 'class.yith-ywraq-shortcodes.php' );
 
-    require_once( YITH_YWRAQ_DIR . 'class.yith-request-quote.php' );
+    require_once( YITH_YWRAQ_INC . 'class.yith-request-quote.php' );
     if ( is_admin() ) {
-        require_once( YITH_YWRAQ_DIR . 'class.yith-request-quote-admin.php' );
+        require_once( YITH_YWRAQ_INC . 'class.yith-request-quote-admin.php' );
     }
     else {
-        require_once( YITH_YWRAQ_DIR . 'class.yith-request-quote-frontend.php' );
+        require_once( YITH_YWRAQ_INC . 'class.yith-request-quote-frontend.php' );
         YITH_YWRAQ_Frontend();
     }
 

@@ -20,12 +20,7 @@ if ( !class_exists( 'YITH_YWRAQ_Frontend' ) ) {
          *
          * @var \YWRAQ
          */
-
         protected static $instance;
-
-        public $action_add = 'yith_ywraq_add_item';
-
-        protected $error = array();
 
         /**
          * Returns single instance of the class
@@ -33,7 +28,6 @@ if ( !class_exists( 'YITH_YWRAQ_Frontend' ) ) {
          * @return \YITH_YWRAQ_Frontend
          * @since 1.0.0
          */
-
         public static function get_instance() {
             if ( is_null( self::$instance ) ) {
                 self::$instance = new self();
@@ -50,7 +44,6 @@ if ( !class_exists( 'YITH_YWRAQ_Frontend' ) ) {
          * @since  1.0
          * @author Emanuela Castorina
          */
-
         public function __construct() {
 
             //start the session
@@ -68,7 +61,11 @@ if ( !class_exists( 'YITH_YWRAQ_Frontend' ) ) {
             add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles_scripts' ) );
 
             add_action( 'woocommerce_single_product_summary', array( $this, 'hide_add_to_cart_single' ), 10 );
-            add_action( 'woocommerce_after_shop_loop_item', array( $this, 'hide_add_to_cart_single' ), 5 );
+
+
+            if ( get_option( 'ywraq_hide_add_to_cart' ) == 'yes'){
+                add_filter( 'woocommerce_loop_add_to_cart_link', array( $this, 'hide_add_to_cart_loop' ), 10, 2);
+            }
 
             $shortcodes = new YITH_YWRAQ_Shortcodes();
 
@@ -85,20 +82,30 @@ if ( !class_exists( 'YITH_YWRAQ_Frontend' ) ) {
         public function hide_add_to_cart_single() {
 
             if ( get_option( 'ywraq_hide_add_to_cart' ) == 'yes' ) {
-
                 $priority = has_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart' );
                 if ( $priority ) {
                     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', $priority );
                 }
-
-                $priority = has_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
-
-                if ( $priority ) {
-                    remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', $priority );
-                }
             }
+
         }
 
+        /**
+         * Hide add to cart in loop
+         *
+         * Hide the button add to cart in the shop page
+         *
+         * @since  1.0
+         * @author Emanuela Castorina
+         */
+        public function hide_add_to_cart_loop( $link , $product) {
+
+            if ( $product->product_type != 'variable') {
+                return '';
+            }
+
+            return $link;
+        }
 
         /**
          * Enqueue Scripts and Styles
@@ -112,6 +119,12 @@ if ( !class_exists( 'YITH_YWRAQ_Frontend' ) ) {
             $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
             wp_register_script( 'yith_ywraq_frontend', YITH_YWRAQ_ASSETS_URL . '/js/frontend' . $suffix . '.js', array( 'jquery' ), '1.0', true );
 
+            $assets_path = str_replace( array( 'http:', 'https:' ), '', WC()->plugin_url() ) . '/assets/';
+
+            // Prettyphoto for modal questions
+            wp_enqueue_style( 'woocommerce_prettyPhoto_css', $assets_path . 'css/prettyPhoto.css' );
+            wp_enqueue_script( 'prettyPhoto', $assets_path . 'js/prettyPhoto/jquery.prettyPhoto' . $suffix . '.js', array( 'jquery' ), '3.1.5', true );
+
             $localize_script_args = array(
                 'ajaxurl'            => admin_url( 'admin-ajax.php' ),
                 'no_product_in_list' => __( 'Your list is empty', 'ywraq' )
@@ -120,6 +133,11 @@ if ( !class_exists( 'YITH_YWRAQ_Frontend' ) ) {
 
             wp_enqueue_style( 'yith_ywraq_frontend', YITH_YWRAQ_ASSETS_URL . '/css/frontend.css' );
             wp_enqueue_script( 'yith_ywraq_frontend' );
+
+            if( defined('YITH_YWRAQ_PREMIUM') ){
+                $custom_css = require_once(YITH_YWRAQ_TEMPLATE_PATH.'/layout/css.php');
+                wp_add_inline_style( 'yith_ywraq_frontend', $custom_css );
+            }
         }
 
         /**
@@ -139,15 +157,17 @@ if ( !class_exists( 'YITH_YWRAQ_Frontend' ) ) {
             $this->print_button();
         }
 
-        /**
-         * Print the button "Add to Quote"
-         *
-         * @return void
-         * @since  1.0.0
-         * @author Emanuela Castorina
-         */
-        public function print_button(){
-            global $product;
+        public function print_button( $product = false ){
+
+            if( ! $product ){
+                global $product;
+            }
+
+
+            if ( !apply_filters( 'yith_ywraq_before_print_button', true, $product ) ) {
+                return;
+            }
+
 
             $style_button = ( get_option( 'ywraq_show_btn_link' ) == 'button' ) ? 'button' : '';
 
