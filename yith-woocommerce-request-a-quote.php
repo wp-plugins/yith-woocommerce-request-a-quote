@@ -2,7 +2,7 @@
 /*
 Plugin Name: YITH Woocommerce Request A Quote
 Description: The YITH Woocommerce Request A Quote plugin lets your customers ask for an estimate of a list of products they are interested into.
-Version: 1.0.0
+Version: 1.0.1
 Author: Yithemes
 Author URI: http://yithemes.com/
 Text Domain: ywraq
