@@ -52,8 +52,8 @@ if ( !function_exists( 'yith_ywraq_locate_template' ) ) {
     }
 }
 
-if ( !function_exists( 'yith_ywraq_get_produtc_meta' ) ) {
-    function yith_ywraq_get_produtc_meta( $raq, $echo = true ) {
+if ( !function_exists( 'yith_ywraq_get_product_meta' ) ) {
+    function yith_ywraq_get_product_meta( $raq, $echo = true ) {
         /**
          * Return the product meta in a varion product
          *
@@ -84,12 +84,13 @@ if ( !function_exists( 'yith_ywraq_get_produtc_meta' ) ) {
                     }
                     $label = wc_attribute_label( $taxonomy );
 
+                    $item_data[] = array(
+                        'key'   => $label,
+                        'value' => $value
+                    );
                 }
 
-                $item_data[] = array(
-                    'key'   => $label,
-                    'value' => $value
-                );
+
             }
         }
 
@@ -111,6 +112,67 @@ if ( !function_exists( 'yith_ywraq_get_produtc_meta' ) ) {
     }
 }
 
+
+if ( !function_exists( 'yith_ywraq_get_product_meta_from_order_item' ) ) {
+    function yith_ywraq_get_product_meta_from_order_item( $item_meta, $echo = true ) {
+        /**
+         * Return the product meta in a varion product
+         *
+         * @param array $raq
+         * @param bool  $echo
+         *
+         * @return string
+         * @since 1.0.0
+         */
+        $item_data = array();
+
+        // Variation data
+        if ( !empty( $item_meta ) ) {
+
+            foreach ( $item_meta as $name => $val ) {
+
+                if ( empty( $val ) ) {
+                    continue;
+                }
+
+                $taxonomy = $name;
+
+                // If this is a term slug, get the term's nice name
+                if ( taxonomy_exists( $taxonomy ) ) {
+                    $term = get_term_by( 'slug', $val[0], $taxonomy );
+                    if ( !is_wp_error( $term ) && $term && $term->name ) {
+                        $value = $term->name;
+                    }
+                    $label = wc_attribute_label( $taxonomy );
+
+                    $item_data[] = array(
+                        'key'   => $label,
+                        'value' => $value
+                    );
+
+                }
+            }
+        }
+
+        $out = "";
+        // Output flat or in list format
+        if ( sizeof( $item_data ) > 0 ) {
+            foreach ( $item_data as $data ) {
+                if ( $echo ) {
+                    echo esc_html( $data['key'] ) . ': ' . wp_kses_post( $data['value'] ) . "\n";
+                }
+                else {
+                    $out .= ' - ' . esc_html( $data['key'] ) . ': ' . wp_kses_post( $data['value'] ) . ' ';
+                }
+            }
+        }
+
+        return $out;
+
+    }
+}
+
+/****** NOTICES *****/
 /**
  * Get the count of notices added, either for all notices (default) or for one
  * particular notice type specified by $notice_type.
@@ -139,8 +201,6 @@ function yith_ywraq_notice_count( $notice_type = '' ) {
     return $notice_count;
 }
 
-
-
 /**
  * Add and store a notice
  *
@@ -163,7 +223,6 @@ function yith_ywraq_add_notice( $message, $notice_type = 'success' ) {
     $session->set( 'yith_ywraq_notices', $notices );
 
 }
-
 
 /**
  * Prints messages and errors which are stored in the session, then clears them.
@@ -195,4 +254,154 @@ function yith_ywraq_print_notices() {
 function yith_ywraq_clear_notices() {
     $session = YITH_Request_Quote()->session_class;
     $session->set( 'yith_ywraq_notices', null );
+}
+
+
+/****** PREMIUM FUNCTIONS *****/
+
+
+function ywraq_get_order_status_tag( $status ){
+    switch( $status ){
+        case 'ywraq-new':
+            echo '<span class="raq_status new">'.__('new','ywraq').'</span>';
+            break;
+        case 'ywraq-pending':
+            echo '<span class="raq_status pending">'.__('pending','ywraq').'</span>';
+            break;
+        case 'ywraq-expired':
+            echo '<span class="raq_status expired">'.__('expired','ywraq').'</span>';
+            break;
+        case 'ywraq-new':
+            echo '<span class="raq_status new">'.__('new','ywraq').'</span>';
+            break;
+        case 'ywraq-rejected':
+            echo '<span class="raq_status rejected">'.__('rejected','ywraq').'</span>';
+            break;
+        case 'pending':
+            echo '<span class="raq_status accepted">'.__('accepted','ywraq').'</span>';
+            break;
+        default:
+            echo '<span class="raq_status accepted">'.__('accepted','ywraq').'</span>';
+    }
+}
+/****** HOOKS *****/
+function yith_ywraq_show_button_in_single_page(){
+    $general_show_btn = get_option('ywraq_show_btn_single_page');
+    if ( $general_show_btn == 'yes' ){  //check if the product is in exclusion list
+        global $product;
+        $hide_quote_button = get_post_meta( $product->id, '_ywraq_hide_quote_button', true);
+        if ( $hide_quote_button == 1 ) return 'no';
+    }
+
+    return $general_show_btn;
+}
+
+function yith_ywraq_show_button_in_other_pages( $setting_option ){
+
+    if( $setting_option == 'no' ) return $setting_option;
+
+    global $product;
+    $hide_quote_button = get_post_meta( $product->id, '_ywraq_hide_quote_button', true);
+    $general_show_btn = get_option('ywraq_show_btn_exclusion');
+
+    if ( $general_show_btn == 'yes' ){  //check if the product is in exclusion list
+        if ( $hide_quote_button == 1 ) return 'no';
+    }
+    return 'yes';
+}
+/**
+ * Get list of forms by YIT Contact Form plugin
+ *
+ * @param   $array array
+ * @since   1.0.0
+ * @author  Emanuela Castorina
+ * @return  array
+ */
+function yith_ywraq_get_contact_forms(){
+    if( ! function_exists( 'YIT_Contact_Form' ) ){
+        return array( '' => __( 'Plugin not activated or not installed', 'ywraq' ) );
+    }
+
+    $posts = get_posts( array(
+        'post_type' => YIT_Contact_Form()->contact_form_post_type
+    ) );
+
+    foreach( $posts as $post ){
+        $array[ $post->post_name ] = $post->post_title;
+    }
+
+    if( $array == array() ) return array( '' => __( 'No contact form found', 'ywctm' ) );
+
+    return $array;
+}
+
+/**
+ * Get list of forms by Contact Form 7 plugin
+ *
+ * @param   $array array
+ * @since   1.0.0
+ * @author  Emanuela Castorina
+ * @return  array
+ */
+function yith_ywraq_wpcf7_get_contact_forms(){
+    if( ! function_exists( 'wpcf7_contact_form' ) ){
+        return array( '' => __( 'Plugin not activated or not installed', 'ywctm' ) );
+    }
+
+    $posts = WPCF7_ContactForm::find();
+
+    foreach( $posts as $post ){
+        $array[ $post->id() ] = $post->title();
+    }
+
+    if( $array == array() ) return array( '' => __( 'No contact form found', 'ywctm' ) );
+
+    return $array;
+}
+
+
+function yith_ywraq_email_custom_tags( $text, $tag, $html){
+
+    if( $tag == 'yith-request-a-quote-list' ){
+        return yith_ywraq_get_email_template($html);
+    }
+}
+
+function yith_ywraq_get_email_template( $html ) {
+    $raq_data['raq_content'] = YITH_Request_Quote()->get_raq_return();
+    ob_start();
+    if ( $html ) {
+        wc_get_template( 'emails/request-quote-table.php', array(
+            'raq_data' => $raq_data
+        ) );
+    }
+    else {
+        wc_get_template( 'emails/plain/request-quote-table.php', array(
+            'raq_data' => $raq_data
+        ) );
+    }
+    return ob_get_clean();
+}
+
+function yith_ywraq_quote_list_shortcode( $shortcodes ){
+    $shortcodes['%yith-request-a-quote-list%'] =   yith_ywraq_get_email_template(true);
+    return $shortcodes;
+}
+add_filter('yit_contact_form_shortcodes', 'yith_ywraq_quote_list_shortcode' );
+
+
+function ywraq_get_token( $action, $order_id, $email){
+    return wp_hash( $action.'|'. $order_id .'|'. $email, 'ywraq' );
+}
+
+function ywraq_verify_token( $token, $action, $order_id, $email){
+    $expected = wp_hash( $action.'|'. $order_id .'|'. $email, 'ywraq' );
+    if ( hash_equals( $expected, $token ) ) {
+        return 1;
+    }
+    return 0;
+}
+
+function ywraq_get_browse_list_message(){
+    return apply_filters( 'ywraq_product_added_view_browse_list' , __( 'Browse the list', 'ywraq' ) );
 }

@@ -9,15 +9,16 @@ jQuery(document).ready( function($){
 
     if( $body.hasClass('single-product') ){
 
-        var button = $('.yith-ywraq-add-button').find('a'),
+        var $product_id = $('[name|="product_id"]'),
+            product_id = $product_id.val(),
+            button = $('.add-to-quote-'+product_id).find('a'),
             $button_wrap = button.parents('.yith-ywraq-add-to-quote'),
-            $variation_id = $('[name|="variation_id"]'),
-            $product_id = $('[name|="product_id"]');
+            $variation_id = $('[name|="variation_id"]');
 
         $variation_id.on('change', function(){
 
             if( $(this).val() == ''){
-                button.hide();
+                button.parent().hide().removeClass('show');
             }else{
                 $.ajax({
                     type   : 'POST',
@@ -26,35 +27,40 @@ jQuery(document).ready( function($){
                     data   : 'action=yith_ywraq_action&ywraq_action=variation_exist&variation_id='+$variation_id.val()+'&product_id='+$product_id.val(),
                     success: function (response) {
                         if( response.result === true){
-                            button.hide();
+                            button.parent().hide().removeClass('show');
                             if( $('.yith_ywraq_add_item_browse-list-'+$product_id.val()).length == 0){
-                                $button_wrap.append( '<div class="yith_ywraq_add_item_response-'+$product_id.val()+'">' + response.message + '</div>');
-                                $button_wrap.append( '<div class="yith_ywraq_add_item_browse-list-'+$product_id.val()+'"><a href="'+response.rqa_url+'">' + response.label_browse + '</a></div>');
+                                $button_wrap.append( '<div class="yith_ywraq_add_item_response-'+$product_id.val()+' yith_ywraq_add_item_response_message">' + response.message + '</div>');
+                                $button_wrap.append( '<div class="yith_ywraq_add_item_browse-list-'+$product_id.val()+' yith_ywraq_add_item_browse_message"><a href="'+response.rqa_url+'">' + response.label_browse + '</a></div>');
                             }
                         }else{
-
                             $('.yith_ywraq_add_item_response-'+$product_id.val()).remove();
                             $('.yith_ywraq_add_item_browse-list-'+$product_id.val()).remove();
-                            button.show();
+                            button.parent().show().addClass('show');
                         }
                     }
                 });
-
             }
 
         });
     }
 
 
-    $add_to_cart_el.on( 'click' , function(e){
+    $(document).on( 'click' ,'.add-request-quote-button', function(e){
 
         e.preventDefault();
 
         var $t = $(this),
             $t_wrap = $t.parents('.yith-ywraq-add-to-quote'),
-            $add_to_cart_el = $('input[name="add-to-cart"]'),
-            $product_id_el = $('input[name="product_id"]'),
             add_to_cart_info = 'ac';
+
+
+        if ( $t.parents('ul.products').length > 0) {
+            var $add_to_cart_el = $t.parents('li.product').find('input[name="add-to-cart"]'),
+                $product_id_el = $t.parents('li.product').find('input[name="product_id"]');
+        }else{
+            var $add_to_cart_el = $t.parents('.product').find('input[name="add-to-cart"]'),
+                $product_id_el = $t.parents('.product').find('input[name="product_id"]');
+        }
 
 
         if ($add_to_cart_el.length > 0 && $product_id_el.length > 0) { //variable product
@@ -64,6 +70,7 @@ jQuery(document).ready( function($){
         } else if ( $add_to_cart_el.length == 0) { //shop page - archive page
             add_to_cart_info = 'quantity=1';
         }
+
 
         add_to_cart_info += '&action=yith_ywraq_action&ywraq_action=add_item&product_id='+$t.data('product_id')+'&wp_nonce='+$t.data('wp_nonce');
         if( add_to_cart_info.indexOf('add-to-cart') > 0){
@@ -83,15 +90,21 @@ jQuery(document).ready( function($){
             },
 
             success: function (response) {
-                    if( response.result == 'true' || response.result == 'exists'){
-                        $t.hide();
-                        $t_wrap.append( '<div class="yith_ywraq_add_item_response-'+$product_id_el.val()+'">' + response.message + '</div>');
-                        $t_wrap.append( '<div class="yith_ywraq_add_item_browse-list-'+$product_id_el.val()+'"><a href="'+response.rqa_url+'">' + response.label_browse + '</a></div>');
-                    }else if( response.result == 'false' ){
-                        $t_wrap.append( '<div class="yith_ywraq_add_item_response-'+$product_id_el.val()+'">' + response.message + '</div>');
+                if( response.result == 'true' || response.result == 'exists'){
+                    $t.parent().hide().removeClass('show');
+                    var prod_id = ( typeof $product_id_el.val() == 'undefined') ? '' : '-'+$product_id_el.val();
+                    $t_wrap.append( '<div class="yith_ywraq_add_item_response'+ prod_id +' yith_ywraq_add_item_response_message">' + response.message + '</div>');
+                    $t_wrap.append( '<div class="yith_ywraq_add_item_browse-list'+prod_id+' yith_ywraq_add_item_browse_message"><a href="'+response.rqa_url+'">' + response.label_browse + '</a></div>');
+
+                    if( $widget.length ){
+                        $widget.ywraq_refresh_widget();
                     }
+                }else if( response.result == 'false' ){
+                    $t_wrap.append( '<div class="yith_ywraq_add_item_response-'+$product_id_el.val()+'">' + response.message + '</div>');
+                }
             }
         });
+
 
     });
 
@@ -124,7 +137,7 @@ jQuery(document).ready( function($){
                 if( response === 1){
                     $("[data-remove-item='"+key+"']").parents('.cart_item').remove();
                     if( $('.cart_item').length === 0 ){
-                        $('#yith-ywraq-form, #yith-ywraq-mail-form').remove();
+                        $('#yith-ywraq-form, #yith-ywraq-mail-form, .yith-ywraq-mail-form-wrapper').remove();
                         $('#yith-ywraq-message').text(ywraq_frontend.no_product_in_list);
                     }
                 }

@@ -82,6 +82,7 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
             add_filter( 'woocommerce_locate_core_template', array( $this, 'filter_woocommerce_template' ), 10, 3 );
             add_filter( 'woocommerce_locate_template', array( $this, 'filter_woocommerce_template' ), 10, 3 );
 
+
         }
 
         /**
@@ -140,6 +141,18 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
          */
         public function is_empty() {
             return empty( $this->raq_content );
+        }
+
+        /**
+         * get_item_number
+         *
+         * return true if the list is empty
+         * @since  1.0.0
+         * @return bool
+         * @author Emanuela Castorina
+         */
+        public function get_raq_item_number() {
+            return count( $this->raq_content );
         }
 
         /**
@@ -233,6 +246,7 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
          */
         public function exists( $product_id, $variation_id = false ) {
 
+
             if ( $variation_id ) {
                 //variation product
                 $key_to_find = md5( $product_id . $variation_id );
@@ -246,6 +260,7 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
                 $this->errors[] = __( 'Product already in the list.', 'ywraq' );
                 return true;
             }
+
 
             return false;
         }
@@ -412,7 +427,7 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
                 array(
                     'result'       => $return,
                     'message'      => $message,
-                    'label_browse' => __( 'Browse the list', 'ywraq' ),
+                    'label_browse' => ywraq_get_browse_list_message(),
                     'rqa_url'      => $this->get_raq_page_url(),
                 )
             );
@@ -455,7 +470,7 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
                     array(
                         'result'       => $return,
                         'message'      => $message,
-                        'label_browse' => __( 'Browse the list', 'ywraq' ),
+                        'label_browse' => ywraq_get_browse_list_message(),
                         'rqa_url'      => $this->get_raq_page_url(),
                     )
                 );
@@ -472,7 +487,7 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
             $option_value = get_option( 'ywraq_page_id' );
             $base_url     = get_the_permalink( $option_value );
 
-            return $base_url;
+            return apply_filters( 'ywraq_request_page_url', $base_url );
         }
 
         /**
@@ -503,8 +518,8 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
          * @since 1.0.0
          */
         public function send_message() {
-            if( ! isset( $_POST['rqa_name'] ) ) return;
 
+            if( ! isset( $_POST['rqa_name'] ) ) return;
 
             $errors = array();
 

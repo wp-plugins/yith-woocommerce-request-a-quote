@@ -91,6 +91,8 @@ if ( !class_exists( 'YITH_YWRAQ_Admin' ) ) {
             //custom styles and javascripts
             add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles_scripts' ) );
 
+
+
         }
 
 
@@ -176,6 +178,9 @@ if ( !class_exists( 'YITH_YWRAQ_Admin' ) ) {
             }
 
             $this->_panel = new YIT_Plugin_Panel_WooCommerce( $args );
+
+            add_action( 'woocommerce_admin_field_ywraq_upload', array( $this->_panel, 'yit_upload' ), 10, 1 );
+            add_action( 'woocommerce_update_option_ywraq_upload', array( $this->_panel, 'yit_upload_update' ), 10, 1 );
         }
 
 

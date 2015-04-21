@@ -1,10 +1,10 @@
 ﻿=== YITH WooCommerce Request A Quote ===
 
 Contributors: yithemes
-Tags: request a quote, quote, yithemes, woocommerce, shop, ecommece, e-commerce, quotations, request for quote, rfq, raq, proposal, ask an estimate, budget, email quote
+Tags: request a quote, quote, yithemes, woocommerce, shop, ecommerce, e-commerce, quotations, request for quote, rfq, raq, proposal, ask an estimate, budget, email quote
 Requires at least: 3.5.1
 Tested up to: 4.1.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,12 @@ Yes, in Yit Plugins->Request A Quote->Settings page, you can choose hide or show
 4. Request a Quote Email Settings page
 
 == Changelog ==
+
+= 1.0.2 =
+Updated: Compatibility with YITH Infinite Scrolling
+Updated: Plugin Core Framework
+Fixed: Template to overwrite
+
 = 1.0.1 =
 Updated: Plugin Core Framework
 Added: Translation pt_BR
@@ -65,6 +71,11 @@ Fixed: Minor bugs
 Initial release
 
 == Upgrade notice ==
+= 1.0.2 =
+Updated: Compatibility with YITH Infinite Scrolling
+Updated: Plugin Core Framework
+Fixed: Template to overwrite
+
 = 1.0.1 =
 Updated: Plugin Core Framework
 Added: Translation pt_BR

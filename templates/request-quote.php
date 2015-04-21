@@ -16,10 +16,10 @@ if( function_exists( 'wc_print_notices' ) ) {
 ?>
 	<div id="yith-ywraq-message"></div>
 
-	<?php yit_plugin_get_template( YITH_YWRAQ_DIR, 'request-quote-' . $template_part . '.php', $args );  ?>
+	<?php wc_get_template( 'request-quote-' . $template_part . '.php', $args, YITH_YWRAQ_DIR, YITH_YWRAQ_DIR );  ?>
 
     <?php if( count($raq_content) != 0): ?>
 
-        <?php yit_plugin_get_template( YITH_YWRAQ_DIR, 'request-quote-form.php', $args );  ?>
+        <?php wc_get_template( 'request-quote-form.php', $args, YITH_YWRAQ_DIR, YITH_YWRAQ_DIR );  ?>
 
     <?php endif ?>

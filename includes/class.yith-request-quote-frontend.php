@@ -176,14 +176,15 @@ if ( !class_exists( 'YITH_YWRAQ_Frontend' ) ) {
                 'wpnonce'       => wp_create_nonce( 'add-request-quote-' . $product->id ),
                 'product_id'    => $product->id,
                 'label'         => get_option('ywraq_show_btn_link_text'),
-                'label_browse'  => __( 'Browse the list', 'ywraq' ),
+                'label_browse'  => apply_filters( 'ywraq_product_added_view_browse_list' , __( 'Browse the list', 'ywraq' ) ),
                 'template_part' => 'button',
                 'rqa_url'       => YITH_Request_Quote()->get_raq_page_url(),
                 'exists'        => ( $product->product_type == 'variable' ) ? false : YITH_Request_Quote()->exists( $product->id )
             );
             $args['args'] = $args;
 
-            yit_plugin_get_template( YITH_YWRAQ_DIR, 'add-to-quote.php', $args );
+            wc_get_template('add-to-quote.php', $args, YITH_YWRAQ_DIR, YITH_YWRAQ_DIR);
+
         }
 
         /**
