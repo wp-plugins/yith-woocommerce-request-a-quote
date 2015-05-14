@@ -117,7 +117,7 @@ if( count($raq_content) == 0):
 	<?php endforeach ?>
 
             <tr>
-                <td colspan="4" class="actions">
+                <td colspan="5" class="actions">
                     <input type="submit" class="button" name="update_raq" value="<?php _e('Update List', 'ywraq') ?>">
                     <input type="hidden" id="update_raq_wpnonce" name="update_raq_wpnonce" value="<?php echo wp_create_nonce( 'update-request-quote-quantity' ) ?>">
                 </td>
