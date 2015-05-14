@@ -1,0 +1,379 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: YIT WooCommerce Request a Quote\n"
+"POT-Creation-Date: 2015-05-14 11:48+0100\n"
+"PO-Revision-Date: 2015-05-14 11:48+0100\n"
+"Last-Translator: \n"
+"Language-Team: Yithemes <plugins@yithemes.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.6\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n:1,2;__ngettext:1,2;"
+"__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;"
+"_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n!=1;\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPathExcluded-0: ../plugin-fw\n"
+
+#: ../includes/class.yith-request-quote-admin.php:151
+#: ../includes/class.yith-request-quote-admin.php:258
+msgid "Settings"
+msgstr ""
+
+#: ../includes/class.yith-request-quote-admin.php:155
+#: ../includes/class.yith-request-quote-admin.php:260
+msgid "Premium Version"
+msgstr ""
+
+#: ../includes/class.yith-request-quote-admin.php:158
+msgid "Layout"
+msgstr ""
+
+#: ../includes/class.yith-request-quote-admin.php:159
+msgid "Exclusion List"
+msgstr ""
+
+#: ../includes/class.yith-request-quote-admin.php:165
+#: ../includes/class.yith-request-quote-admin.php:166
+#: ../includes/class.yith-request-quote-admin.php:214
+msgid "Request a Quote"
+msgstr ""
+
+#: ../includes/class.yith-request-quote-admin.php:213
+msgctxt "page_slug"
+msgid "request-quote"
+msgstr ""
+
+#: ../includes/class.yith-request-quote-admin.php:286
+msgid "Plugin Documentation"
+msgstr ""
+
+#: ../includes/class.yith-request-quote-frontend.php:130
+msgid "Your list is empty"
+msgstr ""
+
+#: ../includes/class.yith-request-quote-frontend.php:179
+#: ../includes/functions.yith-request-quote.php:406
+msgid "Browse the list"
+msgstr ""
+
+#: ../includes/class.yith-request-quote.php:260
+#: ../includes/class.yith-request-quote.php:420
+#: ../includes/class.yith-request-quote.php:466
+msgid "Product already in the list."
+msgstr ""
+
+#: ../includes/class.yith-request-quote.php:410
+msgid "Error occurred while adding product to Request a Quote list."
+msgstr ""
+
+#: ../includes/class.yith-request-quote.php:417
+msgid "Product added!"
+msgstr ""
+
+#: ../includes/class.yith-request-quote.php:531
+msgid "Please enter a name"
+msgstr ""
+
+#: ../includes/class.yith-request-quote.php:535
+msgid "Please enter a valid email"
+msgstr ""
+
+#: ../includes/class.yith-request-quote.php:539
+msgid "Your list is empty, add products to the list to send a request"
+msgstr ""
+
+#: ../includes/class.yith-request-quote.php:558
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:76
+msgid "There was a problem in sending your request. Please try again."
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:31
+msgid "Email to request a quote"
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:32
+msgid "This email is sent when a user clicks on \"Request a quote\" button"
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:34
+msgid "Request a quote"
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:35
+msgid "[Request a quote]"
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:74
+msgid "Your request has been sent successfully"
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:144
+msgid "Subject"
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:146
+#, php-format
+msgid ""
+"This field lets you modify the email subject line. Leave it blank to use "
+"default subject: <code>%s</code>."
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:151
+msgid "Recipient(s)"
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:153
+#, php-format
+msgid ""
+"Enter recipients (comma separated) for this email. Defaults to <code>%s</"
+"code>"
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:158
+msgid "Send CC copy"
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:160
+msgid "Send a carbon copy to the user"
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:164
+msgid "Email Heading"
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:166
+#, php-format
+msgid ""
+"This field lets you modify the main heading contained within the email "
+"notification. Leave blank to use the default heading: <code>%s</code>."
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:171
+msgid "Email type"
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:173
+msgid "Choose format for the email to be sent."
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:177
+msgid "Plain text"
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:178
+msgid "HTML"
+msgstr ""
+
+#: ../includes/emails/class.yith-ywraq-send-email-request-quote.php:179
+msgid "Multipart"
+msgstr ""
+
+#: ../includes/functions.yith-request-quote.php:266
+#: ../includes/functions.yith-request-quote.php:275
+msgid "new"
+msgstr ""
+
+#: ../includes/functions.yith-request-quote.php:269
+msgid "pending"
+msgstr ""
+
+#: ../includes/functions.yith-request-quote.php:272
+msgid "expired"
+msgstr ""
+
+#: ../includes/functions.yith-request-quote.php:278
+msgid "rejected"
+msgstr ""
+
+#: ../includes/functions.yith-request-quote.php:281
+#: ../includes/functions.yith-request-quote.php:284
+msgid "accepted"
+msgstr ""
+
+#: ../includes/functions.yith-request-quote.php:322
+#: ../includes/functions.yith-request-quote.php:348
+msgid "Plugin not activated or not installed"
+msgstr ""
+
+#: ../includes/functions.yith-request-quote.php:333
+#: ../includes/functions.yith-request-quote.php:357
+msgid "No contact form found"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:21
+msgid "Upgrade to the PREMIUM VERSION"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:24
+msgid "YITH Woocommerce Request A Quote"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:25
+msgid "Discover the Advanced Features"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:26
+msgid ""
+"Upgrade to the PREMIUM VERSION\n"
+"of YITH Woocommerce Request A Quote to benefit from all features!"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:31
+msgid "YITH WooCommerce Request A Quote"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:33
+msgid "Get Support and Pro Features"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:34
+msgid ""
+"By purchasing the premium version of the plugin, you will benefit from the "
+"advanced features of the product and you will get one year of free update "
+"and support through our platform available 24h/24."
+msgstr ""
+
+#: ../plugin-options/settings-options.php:44
+msgid "Request a Quote - General settings"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:50
+msgid "Request Quote Page"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:51
+msgid "Page contents: [yith_ywraq_request_quote]"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:60
+msgid "Button type"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:65
+msgid "Link"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:66
+msgid "Button"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:72
+msgid "Button/Link text"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:76
+msgid "Add to quote"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:80
+msgid "Hide \"Add to cart\" button"
+msgstr ""
+
+#: ../templates/add-to-quote.php:16
+msgid "The product is already in quote request list!"
+msgstr ""
+
+#: ../templates/emails/plain/request-quote.php:15
+#, php-format
+msgid ""
+"You have received a quote request from %s. The request is the following:"
+msgstr ""
+
+#: ../templates/emails/plain/request-quote.php:39
+#: ../templates/emails/request-quote.php:48
+msgid "Customer message"
+msgstr ""
+
+#: ../templates/emails/plain/request-quote.php:44
+#: ../templates/emails/request-quote.php:51
+msgid "Customer details"
+msgstr ""
+
+#: ../templates/emails/plain/request-quote.php:46
+#: ../templates/emails/request-quote.php:53
+msgid "Name:"
+msgstr ""
+
+#: ../templates/emails/plain/request-quote.php:47
+#: ../templates/emails/request-quote.php:54
+msgid "Email:"
+msgstr ""
+
+#: ../templates/emails/request-quote.php:13
+#, php-format
+msgid "You received a quote request from %s. The request is the following:"
+msgstr ""
+
+#: ../templates/emails/request-quote.php:17
+msgid "Request Quote"
+msgstr ""
+
+#: ../templates/emails/request-quote.php:22
+#: ../templates/request-quote-view.php:21
+msgid "Product"
+msgstr ""
+
+#: ../templates/emails/request-quote.php:23
+#: ../templates/request-quote-view.php:22
+msgid "Quantity"
+msgstr ""
+
+#: ../templates/emails/request-quote.php:24
+msgid "Subtotal"
+msgstr ""
+
+#: ../templates/request-quote-form.php:19
+msgid "Send the request"
+msgstr ""
+
+#: ../templates/request-quote-form.php:24
+msgid "Name"
+msgstr ""
+
+#: ../templates/request-quote-form.php:30
+msgid "Email"
+msgstr ""
+
+#: ../templates/request-quote-form.php:41
+msgid "Message"
+msgstr ""
+
+#: ../templates/request-quote-form.php:42
+msgid "Notes on your request..."
+msgstr ""
+
+#: ../templates/request-quote-form.php:47
+msgid "Send Your Request"
+msgstr ""
+
+#: ../templates/request-quote-view.php:13
+msgid "No products in list"
+msgstr ""
+
+#: ../templates/request-quote-view.php:23
+msgid "Total"
+msgstr ""
+
+#: ../templates/request-quote-view.php:35
+msgid "Remove this item"
+msgstr ""
+
+#: ../templates/request-quote-view.php:121
+msgid "Update List"
+msgstr ""
+
+#: ../yith-woocommerce-request-a-quote.php:34
+msgid ""
+"You can't activate the free version of YITH Woocommerce Request A Quote "
+"while you are using the premium one."
+msgstr ""
+
+#: ../yith-woocommerce-request-a-quote.php:101
+msgid ""
+"YITH Woocommerce Request A Quote is enabled but not effective. It requires "
+"Woocommerce in order to work."
+msgstr ""
