@@ -1,4 +1,5 @@
 <?php
+
 if ( !defined( 'ABSPATH' ) || !defined( 'YITH_YWRAQ_VERSION' ) ) {
     exit; // Exit if accessed directly
 }

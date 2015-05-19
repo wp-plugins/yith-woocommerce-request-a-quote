@@ -23,7 +23,7 @@ echo "\n";
 if( ! empty( $raq_data['raq_content'] ) ):
     foreach( $raq_data['raq_content'] as $item ):
         $product = wc_get_product( $item['product_id'] );
-        echo $product->post->post_title . ' '. yith_ywraq_get_produtc_meta($item, false) . ' | ';
+        echo $product->post->post_title . ' '. yith_ywraq_get_product_meta($item, false) . ' | ';
         echo $item['quantity'];
         echo ' '.WC()->cart->get_product_subtotal( $product, $item['quantity'] );
         echo "\n";

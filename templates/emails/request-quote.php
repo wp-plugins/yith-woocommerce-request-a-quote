@@ -32,7 +32,7 @@
             ?>
             <tr>
                 <td scope="col" style="text-align:left;"><a href="<?php echo get_edit_post_link( $_product->id )?>"><?php echo $_product->post->post_title ?></a>
-                 <?php  if( isset($item['variations'])): ?><small><?php echo yith_ywraq_get_produtc_meta($item); ?></small><?php endif ?></td>
+                 <?php  if( isset($item['variations'])): ?><small><?php echo yith_ywraq_get_product_meta($item); ?></small><?php endif ?></td>
                 <td scope="col" style="text-align:left;"><?php echo $item['quantity'] ?></td>
                 <td scope="col" style="text-align:left;"><?php  echo WC()->cart->get_product_subtotal( $_product, $item['quantity'] ); ?></td>
             </tr>
