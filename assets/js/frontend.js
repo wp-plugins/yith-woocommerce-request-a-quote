@@ -96,9 +96,7 @@ jQuery(document).ready( function($){
                     $t_wrap.append( '<div class="yith_ywraq_add_item_response'+ prod_id +' yith_ywraq_add_item_response_message">' + response.message + '</div>');
                     $t_wrap.append( '<div class="yith_ywraq_add_item_browse-list'+prod_id+' yith_ywraq_add_item_browse_message"><a href="'+response.rqa_url+'">' + response.label_browse + '</a></div>');
 
-                    if( $widget.length ){
-                        $widget.ywraq_refresh_widget();
-                    }
+
                 }else if( response.result == 'false' ){
                     $t_wrap.append( '<div class="yith_ywraq_add_item_response-'+$product_id_el.val()+'">' + response.message + '</div>');
                 }

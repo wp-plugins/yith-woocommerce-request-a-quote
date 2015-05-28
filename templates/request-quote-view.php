@@ -27,6 +27,7 @@ if( count($raq_content) == 0):
 	<?php foreach ( $raq_content as $key => $raq ):
 
 		$_product = wc_get_product(  isset( $raq['variation_id'] ) ? $raq['variation_id'] : $raq['product_id'] );
+        if( !isset( $_product ) || !is_object($_product) ) continue;
     ?>
 			<tr class="cart_item">
 
@@ -60,7 +61,7 @@ if( count($raq_content) == 0):
 					if ( ! empty( $raq['variation_id'] ) && is_array( $raq['variations'] ) ) {
 
 						foreach ( $raq['variations'] as $name => $value ) {
-
+                            $label = '';
 							if ( '' === $value )
 								continue;
 

@@ -123,7 +123,7 @@ if ( !class_exists( 'YITH_YWRAQ_Frontend' ) ) {
 
             // Prettyphoto for modal questions
             wp_enqueue_style( 'woocommerce_prettyPhoto_css', $assets_path . 'css/prettyPhoto.css' );
-            wp_enqueue_script( 'prettyPhoto', $assets_path . 'js/prettyPhoto/jquery.prettyPhoto' . $suffix . '.js', array( 'jquery' ), '3.1.5', true );
+            wp_enqueue_script( 'ywraq-prettyPhoto', $assets_path . 'js/prettyPhoto/jquery.prettyPhoto' . $suffix . '.js', array( 'jquery' ), '3.1.5', true );
 
             $localize_script_args = array(
                 'ajaxurl'            => admin_url( 'admin-ajax.php' ),

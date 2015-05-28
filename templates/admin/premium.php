@@ -195,30 +195,29 @@
         <div class="landing-container">
             <div class="premium-cta">
                 <p>
-                    Upgrade to the <span class="highlight">premium version</span>
-                    of <span class="highlight">YITH WooCommerce Request a Quote</span> to benefit from all features!
+                    <?php echo sprintf( __('Upgrade to %1$spremium version%2$s of %1$sYITH WooCommerce Request a Quote%2$s to benefit from all features!','ywraq'),'<span class="highlight">','</span>' );?>
                 </p>
                 <a href="<?php echo YITH_YWRAQ_Admin()->get_premium_landing_uri() ?>" target="_blank" class="premium-cta-button button btn">
-                    <span class="highlight">UPGRADE</span>
-                    <span>to the premium version</span>
+                    <span class="highlight"><?php _e('UPGRADE','ywraq');?></span>
+                    <span><?php _e('to the premium version','ywraq');?></span>
                 </a>
             </div>
-
         </div>
     </div>
     <div class="section section-even clear" style="background: url(<?php echo YITH_YWRAQ_URL ?>assets/images/01-bg.png) no-repeat #fff; background-position: 85% 75%">
-        <h1>Premium Features</h1>
+        <h1><?PHP _E('Premium Features','ywraq');?></h1>
         <div class="landing-container">
             <div class="col-1">
-                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/01.png" alt="Review Title" />
+                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/01.png" alt="CUSTOMISED BUTTON" />
             </div>
             <div class="col-2">
                 <div class="section-title">
-                    <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/01-icon.png" alt="Review Title"/>
-                    <h2>CUSTOMISED BUTTON</h2>
+                    <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/01-icon.png" alt="icon CUSTOMISED BUTTON"/>
+                    <h2><?PHP _E('CUSTOMISED BUTTON','ywraq');?></h2>
                 </div>
-                <p>Choose the style you prefer for your <b>“Add to Quote”</b> button! In the plugin option panel users will be
-                    able to find a section to set colours and text for the button.
+                <p>
+                    <?php echo sprintf(__('Choose the style you prefer for your %s"Add to Quote"%s button! In the plugin option panel users will be
+                    able to find a section to set colours and text for the button','ywraq'),'<b>','</b>');?>
                 </p>
             </div>
         </div>
@@ -227,29 +226,30 @@
         <div class="landing-container">
             <div class="col-2">
                 <div class="section-title">
-                    <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/02-icon.png" alt="Attachment List" />
-                    <h2>NOT JUST IN PRODUCT PAGE</h2>
+                    <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/02-icon.png" alt="icon 02" />
+                    <h2><?php _e('NOT JUST IN PRODUCT PAGE','ywraq');?></h2>
                 </div>
-                <p>Give users the opportunity to add one or more products to their list for a quote request from many
-                    different pages in your shop, and <b>not just from product detail page</b>. Enable this option and the
-                    button will be shown also in other pages of your store.</p>
+                <p>
+                    <?php echo sprintf( __( 'Give users the opportunity to add one or more products to their list for a quote request from many
+                    different pages in your shop, and %snot just from product detail page%s. Enable this option and the
+                    button will be shown also in other pages of your store.','ywraq' ),'<b>','</b>' );?></p>
             </div>
             <div class="col-1">
-                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/02.png" alt="Attachment List" />
+                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/02.png" alt="show button in different pages" />
             </div>
         </div>
     </div>
     <div class="section section-even clear" style="background: url(<?php echo YITH_YWRAQ_URL ?>assets/images/03-bg.png) no-repeat #fff; background-position: 85% 100%">
         <div class="landing-container">
             <div class="col-1">
-                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/03.png" alt="Vote the review" />
+                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/03.png" alt="HIDE PRODUCT PRICE" />
             </div>
             <div class="col-2">
                 <div class="section-title">
-                    <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/03-icon.png" alt="Vote the review" />
-                    <h2>HIDE PRODUCT PRICE</h2>
+                    <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/03-icon.png" alt="icon 03" />
+                    <h2><?php _e( 'HIDE PRODUCT PRICE','ywraq');?></h2>
                 </div>
-                <p>Put you do not want to show price for products in your shop. Just a click and your wish comes true. Enable the option “Hide Price” and it’s done!</p>
+                <p><?php _e('Put you do not want to show price for products in your shop. Just a click and your wish comes true. Enable the option "Hide Price" and it\'s done!','ywraq');?></p>
             </div>
         </div>
     </div>
@@ -257,31 +257,33 @@
         <div class="landing-container">
             <div class="col-2">
                 <div class="section-title">
-                    <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/04-icon.png" alt="Number" />
-                    <h2>EXCLUSION TABLE</h2>
+                    <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/04-icon.png" alt="icon 04" />
+                    <h2><?php _e('EXCLUSION TABLE','ywraq');?></h2>
                 </div>
-                <p>A dedicated list where you can add those products that have to be excluded from quote requests.
-                    Enable the specific option and “Add to Quote” button will <b>not be displayed</b> for products in this
-                    table. </p>
+                <p>
+                    <?php echo sprintf( __( 'A dedicated list where you can add those products that have to be excluded from quote requests.
+                    Enable the specific option and "Add to Quote" button will %snot be displayed%s for products in this
+                    table. ','ywraq' ),'<b>','</b>' );?></p>
             </div>
             <div class="col-1">
-                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/04.png" alt="Number" />
+                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/04.png" alt="exclusion table" />
             </div>
         </div>
     </div>
     <div class="section section-even clear" style="background: url(<?php echo YITH_YWRAQ_URL ?>assets/images/05-bg.png) no-repeat #fff; background-position: 85% 100%">
         <div class="landing-container">
             <div class="col-1">
-                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/05.png" alt="Filter by rating" />
+                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/05.png" alt="User filters" />
             </div>
             <div class="col-2">
                 <div class="section-title">
-                    <img src="<?php echo YITH_YWRAQ_URL?>assets/images/05-icon.png" alt="Filter by rating" />
-                    <h2>USER FILTERS</h2>
+                    <img src="<?php echo YITH_YWRAQ_URL?>assets/images/05-icon.png" alt="icon 05" />
+                    <h2><?php _e('USER FILTERS','ywraq');?></h2>
                 </div>
-                <p>A specific option allows you to filter users to which applying plugin features. You can choose among
-                    <b>registered</b> users, <b>unregistered</b> ones or let the plugin work for all of them without making any
-                    distinction. </p>
+                <p>
+                    <?php echo sprintf( __('A specific option allows you to filter users to which applying plugin features. You can choose among
+                    %1$sregistered%2$s users, %1$sunregistered%2$s ones or let the plugin work for all of them without making any
+                    distinction. ','ywraq'),'<b>','</b>' );?></p>
             </div>
         </div>
     </div>
@@ -289,32 +291,34 @@
         <div class="landing-container">
             <div class="col-2">
                 <div class="section-title">
-                    <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/06-icon.png" alt="Number" />
-                    <h2>REQUEST FORM</h2>
+                    <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/06-icon.png" alt="icon 06" />
+                    <h2><?php _e('REQUEST FORM','ywraq');?></h2>
                 </div>
-                <p>The plugin includes a default form for <b>sending emails</b>, but if you feel you’re not satisfied by the
-                    form you find there, you can enjoy creating your contact form using “Contact Form 7” and “YITH
-                    Contact Form”. Two external plugins that, once correctly set, work perfectly to improve your plugin
-                    features.</p>
+                <p>
+                    <?php echo sprintf( __('The plugin includes a default form for %ssending emails%s, but if you feel you\'re not satisfied by the
+                    form you find there, you can enjoy creating your contact form using "Contact Form 7" and "YITH
+                    Contact Form". Two external plugins that, once correctly set, work perfectly to improve your plugin
+                    features.','ywraq'),'<b>','</b>' );?></p>
             </div>
             <div class="col-1">
-                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/04.png" alt="Number" />
+                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/06.png" alt="request form" />
             </div>
         </div>
     </div>
     <div class="section section-even clear" style="background: url(<?php echo YITH_YWRAQ_URL ?>assets/images/07-bg.png) no-repeat #fff; background-position: 85% 100%">
         <div class="landing-container">
             <div class="col-1">
-                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/07.png" alt="Filter by rating" />
+                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/07.png" alt="request management" />
             </div>
             <div class="col-2">
                 <div class="section-title">
-                    <img src="<?php echo YITH_YWRAQ_URL?>assets/images/07-icon.png" alt="Filter by rating" />
-                    <h2>REQUEST MANAGEMENT</h2>
+                    <img src="<?php echo YITH_YWRAQ_URL?>assets/images/07-icon.png" alt="Icon 07" />
+                    <h2><?php _e('REQUEST MANAGEMENT','ywraq');?></h2>
                 </div>
-                <p>Every request you get is treated like an order! Yes, that’s it. As soon as a user sends a quote request, you will see it in WooCommerce “Orders” section.
-                    <b>Many details for each request</b>, from current status to the username that generated it.
-                    A rich page specifically created to have everything there and at a hand’s grasp.
+                <p>
+                    <?php echo sprintf( __('Every request you get is treated like an order! Yes, that\'s it. As soon as a user sends a quote request, you will see it in WooCommerce "Orders" section.
+                    %sMany details for each request%s, from current status to the username that generated it.
+                    A rich page specifically created to have everything there and at a hand\'s grasp.','ywraq'),'<b>','</b>' );?>
                 </p>
             </div>
         </div>
@@ -323,63 +327,71 @@
         <div class="landing-container">
             <div class="col-2">
                 <div class="section-title">
-                    <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/08-icon.png" alt="Number" />
-                    <h2> SEND THE QUOTE</h2>
+                    <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/08-icon.png" alt="icon 08" />
+                    <h2><?php _e('SEND THE QUOTE','ywraq');?></h2>
                 </div>
-                <p>The best of interaction with your users. They send their request and you can answer so simply, just
-                    need to access your admin panel. A few steps to send the right proposal that <b>persuades</b> your customer
-                    to purchase.</p>
+                <p>
+                    <?php echo sprintf( __( 'The best of interaction with your users. They send their request and you can answer so simply, just
+                    need to access your admin panel. A few steps to send the right proposal that %spersuades%s your customer
+                    to purchase.','ywraq'),'<b>','</b>' );?></p>
             </div>
             <div class="col-1">
-                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/08.png" alt="Number" />
+                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/08.png" alt="send the quote" />
             </div>
         </div>
     </div>
     <div class="section section-even clear" style="background: url(<?php echo YITH_YWRAQ_URL ?>assets/images/09-bg.png) no-repeat #fff; background-position: 85% 100%">
         <div class="landing-container">
             <div class="col-1">
-                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/09.png" alt="Filter by rating" />
+                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/09.png" alt="accept" />
             </div>
             <div class="col-2">
                 <div class="section-title">
-                    <img src="<?php echo YITH_YWRAQ_URL?>assets/images/09-icon.png" alt="Filter by rating" />
-                    <h2>ACCEPT OR REJECT?</h2>
+                    <img src="<?php echo YITH_YWRAQ_URL?>assets/images/09-icon.png" alt="icon 09" />
+                    <h2><?php _e('ACCEPT OR REJECT?','ywraq');?></h2>
                 </div>
-                <p>Users can decide whether to <b>accept</b> or <b>reject</b> your quote proposal directly from the email they’ve got.
+                <p>
+                    <?php echo sprintf( __( 'Users can decide whether to %1$saccept%2$s or %1$sreject%2$s your quote proposal directly from the email they\'ve got.
                     Two simple choice options, that show professionalism and that your users will certainly appreciate.
-                    In case they accept, they will be redirected to the order checkout.
+                    In case they accept, they will be redirected to the order checkout.','ywraq' ),'<b>','</b>' );?>
                 </p>
             </div>
         </div>
     </div>
+
     <div class="section section-odd clear" style="background: url(<?php echo YITH_YWRAQ_URL ?>assets/images/10-bg.png) no-repeat #f1f1f1; background-position: 15% 100%">
         <div class="landing-container">
             <div class="col-2">
                 <div class="section-title">
-                    <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/10-icon.png" alt="Number" />
-                    <h2> A QUOTE WITH EXPIRATION</h2>
+                    <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/10-icon.png" alt="icon 10" />
+                    <h2><?php _e('A QUOTE WITH EXPIRATION','ywraq');?> </h2>
                 </div>
-                <p>You made a good offer, one that cannot be rejected, and you want to urge your customer to purchase by
-                    <b>setting an expiration date for the proposal you are offering?</b> Add the expiration date directly from
-                    the request page while you are writing your undeniable proposal.
+                <p>
+                    <?php echo sprintf( __('You made a good offer, one that cannot be rejected, and you want to urge your customer to purchase by
+                    %ssetting an expiration date for the proposal you are offering?%s Add the expiration date directly from
+                    the request page while you are writing your undeniable proposal.','ywraq'),'<b>','</b>' );?>
                 </p>
             </div>
             <div class="col-1">
-                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/10.png" alt="Number" />
+                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/10.png" alt="quote expiration" />
             </div>
         </div>
     </div>
-    <div class="section section-even clear" style="background: url(<?php echo YITH_YWRAQ_URL ?>assets/images/11-bg.png) no-repeat #fff; background-position: 85% 100%">
+    <div class="section section-even clear" style="background: url(<?php echo YITH_YWRAQ_URL ?>assets/images/13-bg.png) no-repeat #fff; background-position: 85% 100%">
         <div class="landing-container">
             <div class="col-1">
-                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/11.png" alt="Filter by rating" />
+                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/13.png" alt="PDF Attachment" />
             </div>
             <div class="col-2">
                 <div class="section-title">
-                    <img src="<?php echo YITH_YWRAQ_URL?>assets/images/11-icon.png" alt="Filter by rating" />
-                    <h2>Recent requests in “My Account”</h2>
+                    <img src="<?php echo YITH_YWRAQ_URL?>assets/images/13-icon.png" alt="icon 13" />
+                    <h2><?php _e('Send PDF attachment','ywraq');?></h2>
                 </div>
-                <p>All users registered in your store can see all quote requests they have sent from <b>“My Account”</b> page and check details, included the current status for them. </p>
+                <p>
+                    <?php _e('Choose the best form to send your quote offer: send the quote and the list of selected products
+                    either in the email body, or as PDF attachment or both of them. Everyone with their own style and
+                    needs.','ywraq');?>
+                </p>
             </div>
         </div>
     </div>
@@ -387,13 +399,31 @@
         <div class="landing-container">
             <div class="col-2">
                 <div class="section-title">
-                    <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/12-icon.png" alt="Number" />
-                    <h2>Widget</h2>
+                    <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/12-icon.png" alt="icon 14" />
+                    <h2><?php _e('Widget','ywraq');?></h2>
                 </div>
-                <p>Add a wigdet in the sidebar of your shop and put it at your customers’ disposal. There they will see a <b>list</b> with all products they have selected and added to the quote request so far. </p>
+                <p><?php echo sprintf( __( 'Add a wigdet in the sidebar of your shop and put it at your customers\' disposal. There they will see
+                    a %slist%s with all products they have selected and added to the quote request so far.','ywraq' ),'<b>','</b>' );?>
+                </p>
             </div>
             <div class="col-1">
-                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/12.png" alt="Number" />
+                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/12.png" alt="Widget" />
+            </div>
+        </div>
+    </div>
+    <div class="section section-even clear" style="background: url(<?php echo YITH_YWRAQ_URL ?>assets/images/11-bg.png) no-repeat #fff; background-position: 85% 100%">
+        <div class="landing-container">
+            <div class="col-1">
+                <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/11.png" alt="recent request" />
+            </div>
+            <div class="col-2">
+                <div class="section-title">
+                    <img src="<?php echo YITH_YWRAQ_URL?>assets/images/11-icon.png" alt="icon 13" />
+                    <h2><?php _e('Recent requests in "My Account"','ywraq');?></h2>
+                </div>
+                <p>
+                    <?php echo sprintf( __('All users registered in your store can see all quote requests they have sent from %s"My Account"%s page and check details, included the current status for them.','ywraq'),'<b>','</b>' );?>
+                </p>
             </div>
         </div>
     </div>
@@ -401,12 +431,11 @@
         <div class="landing-container">
             <div class="premium-cta">
                 <p>
-                    Upgrade to the <span class="highlight">premium version</span>
-                    of <span class="highlight">YITH WooCommerce Request a Quote</span> to benefit from all features!
+                    <?php echo sprintf( __('Upgrade to %1$spremium version%2$s of %1$sYITH WooCommerce Request a Quote%2$s to benefit from all features!','ywraq'),'<span class="highlight">','</span>' );?>
                 </p>
                 <a href="<?php echo YITH_YWRAQ_Admin()->get_premium_landing_uri() ?>" target="_blank" class="premium-cta-button button btn">
-                    <span class="highlight">UPGRADE</span>
-                    <span>to the premium version</span>
+                    <span class="highlight"><?php _e('UPGRADE','ywraq');?></span>
+                    <span><?php _e('to the premium version','ywraq');?></span>
                 </a>
             </div>
         </div>

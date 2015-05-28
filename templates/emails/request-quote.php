@@ -28,7 +28,11 @@
     <?php
     if( ! empty( $raq_data['raq_content'] ) ):
         foreach( $raq_data['raq_content'] as $item ):
-            $_product = wc_get_product( $item['product_id'] );
+            if( isset( $item['variation_id']) ){
+                $_product = wc_get_product( $item['variation_id'] );
+            }else{
+                $_product = wc_get_product( $item['product_id'] );
+            }
             ?>
             <tr>
                 <td scope="col" style="text-align:left;"><a href="<?php echo get_edit_post_link( $_product->id )?>"><?php echo $_product->post->post_title ?></a>

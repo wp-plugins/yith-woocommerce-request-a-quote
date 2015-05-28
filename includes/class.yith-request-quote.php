@@ -59,8 +59,7 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
          */
         public function __construct() {
 
-            $this->session_class = new YITH_YWRAQ_Session();
-            $this->set_session();
+			add_action( 'init', array( $this, 'start_session' ));
 
             /* plugin */
             add_action( 'after_setup_theme', array( $this, 'plugin_fw_loader' ), 1 );
@@ -85,6 +84,23 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
 
 
         }
+
+		/**
+		 * Initialize session and cookies
+		 *
+		 * @since  1.0.0
+		 * @author Emanuela Castorina
+		 */
+		function start_session(){
+
+			if( ! isset( $_COOKIE['woocommerce_items_in_cart'] ) ) {
+				do_action( 'woocommerce_set_cart_cookies', true );
+			}
+			$this->session_class = new YITH_YWRAQ_Session();
+			$this->set_session();
+
+
+		}
 
         /**
          * Initialize functions
