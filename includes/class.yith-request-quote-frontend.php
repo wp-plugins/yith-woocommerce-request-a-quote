@@ -51,7 +51,7 @@ if ( !class_exists( 'YITH_YWRAQ_Frontend' ) ) {
                 session_start();
             }
 
-            add_action( 'init', array( $this, 'update_raq_list' ) );
+            add_action( 'wp_loaded', array( $this, 'update_raq_list' ) );
 
             //show button in single page
             add_action( 'woocommerce_single_product_summary', array( $this, 'add_button_single_page' ), 35 );

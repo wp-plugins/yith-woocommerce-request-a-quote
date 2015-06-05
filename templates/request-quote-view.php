@@ -75,9 +75,20 @@ if( count($raq_content) == 0):
 								}
 								$label = wc_attribute_label( $taxonomy );
 
-							}
+							// If this is a custom option slug, get the options name
+                            } else {
+                                $value              = apply_filters( 'woocommerce_variation_option_name', $value );
+                                $custom_att = str_replace( 'attribute_', '', $name);
 
-							$item_data[] = array(
+                                if ( $custom_att != '' ) {
+                                    $label = wc_attribute_label( $custom_att );
+                                } else {
+                                    $label = $name;
+                                }
+                            }
+
+
+                        $item_data[] = array(
 								'key'   => $label,
 								'value' => $value
 							);

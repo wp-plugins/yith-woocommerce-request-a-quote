@@ -84,12 +84,23 @@ if ( !function_exists( 'yith_ywraq_get_product_meta' ) ) {
                     }
                     $label = wc_attribute_label( $taxonomy );
 
-                    $item_data[] = array(
-                        'key'   => $label,
-                        'value' => $value
-                    );
+
+                } else {
+                    $custom_att = str_replace( 'attribute_', '', $name);
+
+                    if ( $custom_att != '' ) {
+                        $label = wc_attribute_label( $custom_att );
+                    } else {
+                        $label = $name;
+                    }
+
+
                 }
 
+                $item_data[] = array(
+                    'key'   => $label,
+                    'value' => $value
+                );
 
             }
         }

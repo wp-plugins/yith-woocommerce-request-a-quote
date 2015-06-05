@@ -4,7 +4,7 @@ Contributors: yithemes
 Tags: request a quote, quote, yithemes, woocommerce, shop, ecommerce, e-commerce, quotations, request for quote, rfq, raq, proposal, ask an estimate, budget, email quote
 Requires at least: 3.5.1
 Tested up to: 4.1.1
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,10 @@ Yes, in Yit Plugins->Request A Quote->Settings page, you can choose hide or show
 4. Request a Quote Email Settings page
 
 == Changelog ==
+= 1.1.4 =
+Fixed: Update quantity in request list
+Fixed: Custom label variation in request list
+
 = 1.1.3 =
 Fixed: Price of variation in email table
 Fixed: Request Number in Contact form 7
@@ -84,6 +88,10 @@ Fixed: Minor bugs
 Initial release
 
 == Upgrade notice ==
+= 1.1.4 =
+Fixed: Update quantity in request list
+Fixed: Custom label variation in request list
+
 = 1.1.3 =
 Fixed: Price of variation in email table
 Fixed: Request Number in Contact form 7
