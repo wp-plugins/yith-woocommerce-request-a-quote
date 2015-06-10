@@ -175,7 +175,7 @@ if ( !class_exists( 'YITH_YWRAQ_Frontend' ) ) {
                 'class'         => 'add-request-quote-button ' . $style_button,
                 'wpnonce'       => wp_create_nonce( 'add-request-quote-' . $product->id ),
                 'product_id'    => $product->id,
-                'label'         => get_option('ywraq_show_btn_link_text'),
+                'label'         => apply_filters( 'ywraq_product_add_to_quote' , get_option('ywraq_show_btn_link_text') ),
                 'label_browse'  => apply_filters( 'ywraq_product_added_view_browse_list' , __( 'Browse the list', 'ywraq' ) ),
                 'template_part' => 'button',
                 'rqa_url'       => YITH_Request_Quote()->get_raq_page_url(),
