@@ -19,7 +19,7 @@ $user_email = ( ! empty( $current_user ) ) ?  $current_user->user_email : '';
     <h3><?php _e( 'Send the request', 'ywraq' ) ?></h3>
 
     <form id="yith-ywraq-mail-form" name="yith-ywraq-mail-form" action="<?php echo esc_url( YITH_Request_Quote()->get_raq_page_url() ) ?>" method="post">
-        <?php if( ! is_user_logged_in() ): ?>
+        <
             <p class="form-row form-row-wide validate-required" id="rqa_name_row">
                 <label for="rqa-name" class=""><?php _e( 'Name', 'ywraq' ) ?>
                     <abbr class="required" title="required">*</abbr></label>
@@ -31,12 +31,7 @@ $user_email = ( ! empty( $current_user ) ) ?  $current_user->user_email : '';
                     <abbr class="required" title="required">*</abbr></label>
                 <input type="email" class="input-text " name="rqa_email" id="rqa-email" placeholder="" value="<?php echo $user_email ?>" required>
             </p>
-        <?php else:
-            $current_user   = wp_get_current_user();
-            ?>
-            <input type="hidden" name="rqa_name" id="rqa-name" value="<?php echo $current_user->display_name ?>">
-            <input type="hidden" name="rqa_email" id="rqa-email" value="<?php echo $current_user->user_email ?>">
-        <?php endif ?>
+
         <p class="form-row" id="rqa_message_row">
             <label for="rqa-message" class=""><?php _e( 'Message', 'ywraq' ) ?></label>
             <textarea name="rqa_message" class="input-text " id="rqa-message" placeholder="<?php _e( 'Notes on your request...', 'ywraq' ) ?>" rows="5" cols="5"></textarea>

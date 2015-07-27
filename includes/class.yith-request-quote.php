@@ -561,7 +561,7 @@ if ( !class_exists( 'YITH_Request_Quote' ) ) {
                     $args = array(
                         'user_name'    => $_POST['rqa_name'],
                         'user_email'   => $_POST['rqa_email'],
-                        'user_message' => $_POST['rqa_message'],
+                        'user_message' => nl2br($_POST['rqa_message']),
                         'raq_content'  => YITH_Request_Quote()->get_raq_return()
                     );
 

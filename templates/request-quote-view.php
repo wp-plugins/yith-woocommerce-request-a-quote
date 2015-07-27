@@ -111,7 +111,7 @@ if( count($raq_content) == 0):
 						$product_quantity = woocommerce_quantity_input( array(
                             'input_name'  => "raq[{$key}][qty]",
 							'input_value' => $raq['quantity'],
-							'max_value'   => $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(),
+							'max_value'   => apply_filters('ywraq_quantity_max_value', $_product->backorders_allowed() ? '' : $_product->get_stock_quantity() ),
 							'min_value'   => '0'
 						), $_product, false );
 

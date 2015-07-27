@@ -6,7 +6,6 @@ jQuery(document).ready( function($){
         $add_to_cart_el = $('.add-request-quote-button'),
         $remove_item = $('.yith-ywraq-item-remove');
 
-
     if( $body.hasClass('single-product') ){
 
         var $product_id = $('[name|="product_id"]'),
@@ -91,7 +90,7 @@ jQuery(document).ready( function($){
 
             success: function (response) {
                 if( response.result == 'true' || response.result == 'exists'){
-                    $t.parent().hide().removeClass('show');
+                    $t.parent().hide().removeClass('show').addClass('addedd');
                     var prod_id = ( typeof $product_id_el.val() == 'undefined') ? '' : '-'+$product_id_el.val();
                     $t_wrap.append( '<div class="yith_ywraq_add_item_response'+ prod_id +' yith_ywraq_add_item_response_message">' + response.message + '</div>');
                     $t_wrap.append( '<div class="yith_ywraq_add_item_browse-list'+prod_id+' yith_ywraq_add_item_browse_message"><a href="'+response.rqa_url+'">' + response.label_browse + '</a></div>');

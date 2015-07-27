@@ -132,6 +132,26 @@ if ( !class_exists( 'YITH_YWRAQ_Send_Email_Request_Quote' ) ) {
         }
 
         /**
+         * Get from name for email.
+         *
+         * @return string
+         */
+        public function get_from_name() {
+            $email_from_name = ( $this->email_from_name != '' ) ? $this->email_from_name : get_option( 'woocommerce_email_from_name' );
+            return wp_specialchars_decode( esc_html( $email_from_name ), ENT_QUOTES );
+        }
+
+        /**
+         * Get from email address.
+         *
+         * @return string
+         */
+        public function get_from_address() {
+            $email_from_email = ( $this->email_from_email != '' ) ? $this->email_from_email : get_option( 'woocommerce_email_from_address' );
+            return sanitize_email( $email_from_email );
+        }
+
+        /**
          * Init form fields to display in WC admin pages
          *
          * @return void
@@ -140,6 +160,20 @@ if ( !class_exists( 'YITH_YWRAQ_Send_Email_Request_Quote' ) ) {
          */
         public function init_form_fields() {
             $this->form_fields = array(
+                'email_from_name'    => array(
+                    'title'       => __( '"From" Name', 'ywraq' ),
+                    'type'        => 'text',
+                    'description' => '',
+                    'placeholder' => '',
+                    'default'     => get_option( 'woocommerce_email_from_name' )
+                ),
+                'email_from_email'    => array(
+                    'title'       => __( '"From" Email Address', 'ywraq' ),
+                    'type'        => 'text',
+                    'description' => '',
+                    'placeholder' => '',
+                    'default'     => get_option( 'woocommerce_email_from_address' )
+                ),
                 'subject'    => array(
                     'title'       => __( 'Subject', 'woocommerce' ),
                     'type'        => 'text',

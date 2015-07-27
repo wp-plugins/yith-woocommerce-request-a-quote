@@ -216,8 +216,7 @@
                     <h2><?PHP _E('CUSTOMISED BUTTON','ywraq');?></h2>
                 </div>
                 <p>
-                    <?php echo sprintf(__('Choose the style you prefer for your %s"Add to Quote"%s button! In the plugin option panel users will be
-                    able to find a section to set colours and text for the button','ywraq'),'<b>','</b>');?>
+                    <?php echo sprintf(__('Choose the style you prefer for your %s"Add to Quote"%s button! In the plugin option panel users will be able to find a section to set colours and text for the button','ywraq'),'<b>','</b>');?>
                 </p>
             </div>
         </div>
@@ -230,9 +229,7 @@
                     <h2><?php _e('NOT JUST IN PRODUCT PAGE','ywraq');?></h2>
                 </div>
                 <p>
-                    <?php echo sprintf( __( 'Give users the opportunity to add one or more products to their list for a quote request from many
-                    different pages in your shop, and %snot just from product detail page%s. Enable this option and the
-                    button will be shown also in other pages of your store.','ywraq' ),'<b>','</b>' );?></p>
+                    <?php echo sprintf( __( 'Give users the opportunity to add one or more products to their list for a quote request from many different pages in your shop, and %snot just from product detail page%s. Enable this option and the button will be shown also in other pages of your store.','ywraq' ),'<b>','</b>' );?></p>
             </div>
             <div class="col-1">
                 <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/02.png" alt="show button in different pages" />
@@ -261,9 +258,7 @@
                     <h2><?php _e('EXCLUSION TABLE','ywraq');?></h2>
                 </div>
                 <p>
-                    <?php echo sprintf( __( 'A dedicated list where you can add those products that have to be excluded from quote requests.
-                    Enable the specific option and "Add to Quote" button will %snot be displayed%s for products in this
-                    table. ','ywraq' ),'<b>','</b>' );?></p>
+                    <?php echo sprintf( __( 'A dedicated list where you can add those products that have to be excluded from quote requests. Enable the specific option and "Add to Quote" button will %snot be displayed%s for products in this table. ','ywraq' ),'<b>','</b>' );?></p>
             </div>
             <div class="col-1">
                 <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/04.png" alt="exclusion table" />
@@ -281,9 +276,7 @@
                     <h2><?php _e('USER FILTERS','ywraq');?></h2>
                 </div>
                 <p>
-                    <?php echo sprintf( __('A specific option allows you to filter users to which applying plugin features. You can choose among
-                    %1$sregistered%2$s users, %1$sunregistered%2$s ones or let the plugin work for all of them without making any
-                    distinction. ','ywraq'),'<b>','</b>' );?></p>
+                    <?php echo sprintf( __('A specific option allows you to filter users to which applying plugin features. You can choose among %1$sregistered%2$s users, %1$sunregistered%2$s ones or let the plugin work for all of them without making any distinction. ','ywraq'),'<b>','</b>' );?></p>
             </div>
         </div>
     </div>
@@ -295,10 +288,7 @@
                     <h2><?php _e('REQUEST FORM','ywraq');?></h2>
                 </div>
                 <p>
-                    <?php echo sprintf( __('The plugin includes a default form for %ssending emails%s, but if you feel you\'re not satisfied by the
-                    form you find there, you can enjoy creating your contact form using "Contact Form 7" and "YITH
-                    Contact Form". Two external plugins that, once correctly set, work perfectly to improve your plugin
-                    features.','ywraq'),'<b>','</b>' );?></p>
+                    <?php echo sprintf( __('The plugin includes a default form for %ssending emails%s, but if you feel you\'re not satisfied by the form you find there, you can enjoy creating your contact form using "Contact Form 7" and "YITH Contact Form". Two external plugins that, once correctly set, work perfectly to improve your plugin features.','ywraq'),'<b>','</b>' );?></p>
             </div>
             <div class="col-1">
                 <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/06.png" alt="request form" />
@@ -316,9 +306,7 @@
                     <h2><?php _e('REQUEST MANAGEMENT','ywraq');?></h2>
                 </div>
                 <p>
-                    <?php echo sprintf( __('Every request you get is treated like an order! Yes, that\'s it. As soon as a user sends a quote request, you will see it in WooCommerce "Orders" section.
-                    %sMany details for each request%s, from current status to the username that generated it.
-                    A rich page specifically created to have everything there and at a hand\'s grasp.','ywraq'),'<b>','</b>' );?>
+                    <?php echo sprintf( __('Every request you get is treated like an order! Yes, that\'s it. As soon as a user sends a quote request, you will see it in WooCommerce "Orders" section. %sMany details for each request%s, from current status to the username that generated it. A rich page specifically created to have everything there and at a hand\'s grasp.','ywraq'),'<b>','</b>' );?>
                 </p>
             </div>
         </div>
@@ -331,9 +319,7 @@
                     <h2><?php _e('SEND THE QUOTE','ywraq');?></h2>
                 </div>
                 <p>
-                    <?php echo sprintf( __( 'The best of interaction with your users. They send their request and you can answer so simply, just
-                    need to access your admin panel. A few steps to send the right proposal that %spersuades%s your customer
-                    to purchase.','ywraq'),'<b>','</b>' );?></p>
+                    <?php echo sprintf( __( 'The best of interaction with your users. They send their request and you can answer so simply, just need to access your admin panel. A few steps to send the right proposal that %spersuades%s your customer to purchase.','ywraq'),'<b>','</b>' );?></p>
             </div>
             <div class="col-1">
                 <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/08.png" alt="send the quote" />
@@ -351,9 +337,7 @@
                     <h2><?php _e('ACCEPT OR REJECT?','ywraq');?></h2>
                 </div>
                 <p>
-                    <?php echo sprintf( __( 'Users can decide whether to %1$saccept%2$s or %1$sreject%2$s your quote proposal directly from the email they\'ve got.
-                    Two simple choice options, that show professionalism and that your users will certainly appreciate.
-                    In case they accept, they will be redirected to the order checkout.','ywraq' ),'<b>','</b>' );?>
+                    <?php echo sprintf( __( 'Users can decide whether to %1$saccept%2$s or %1$sreject%2$s your quote proposal directly from the email they\'ve got. Two simple choice options, that show professionalism and that your users will certainly appreciate. In case they accept, they will be redirected to the order checkout.','ywraq' ),'<b>','</b>' );?>
                 </p>
             </div>
         </div>
@@ -367,9 +351,7 @@
                     <h2><?php _e('A QUOTE WITH EXPIRATION','ywraq');?> </h2>
                 </div>
                 <p>
-                    <?php echo sprintf( __('You made a good offer, one that cannot be rejected, and you want to urge your customer to purchase by
-                    %ssetting an expiration date for the proposal you are offering?%s Add the expiration date directly from
-                    the request page while you are writing your undeniable proposal.','ywraq'),'<b>','</b>' );?>
+                    <?php echo sprintf( __('You made a good offer, one that cannot be rejected, and you want to urge your customer to purchase by %ssetting an expiration date for the proposal you are offering?%s Add the expiration date directly from the request page while you are writing your undeniable proposal.','ywraq'),'<b>','</b>' );?>
                 </p>
             </div>
             <div class="col-1">
@@ -388,9 +370,7 @@
                     <h2><?php _e('Send PDF attachment','ywraq');?></h2>
                 </div>
                 <p>
-                    <?php _e('Choose the best form to send your quote offer: send the quote and the list of selected products
-                    either in the email body, or as PDF attachment or both of them. Everyone with their own style and
-                    needs.','ywraq');?>
+                    <?php _e('Choose the best form to send your quote offer: send the quote and the list of selected products either in the email body, or as PDF attachment or both of them. Everyone with their own style and needs.','ywraq');?>
                 </p>
             </div>
         </div>
@@ -402,8 +382,7 @@
                     <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/12-icon.png" alt="icon 14" />
                     <h2><?php _e('Widget','ywraq');?></h2>
                 </div>
-                <p><?php echo sprintf( __( 'Add a wigdet in the sidebar of your shop and put it at your customers\' disposal. There they will see
-                    a %slist%s with all products they have selected and added to the quote request so far.','ywraq' ),'<b>','</b>' );?>
+                <p><?php echo sprintf( __( 'Add a wigdet in the sidebar of your shop and put it at your customers\' disposal. There they will see a %slist%s with all products they have selected and added to the quote request so far.','ywraq' ),'<b>','</b>' );?>
                 </p>
             </div>
             <div class="col-1">
