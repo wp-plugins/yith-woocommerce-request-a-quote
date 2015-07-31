@@ -246,7 +246,7 @@
                     <img src="<?php echo YITH_YWRAQ_URL ?>assets/images/03-icon.png" alt="icon 03" />
                     <h2><?php _e( 'HIDE PRODUCT PRICE','ywraq');?></h2>
                 </div>
-                <p><?php _e('Put you do not want to show price for products in your shop. Just a click and your wish comes true. Enable the option "Hide Price" and it\'s done!','ywraq');?></p>
+                <p><?php _e('Suppose that you do not want to show price for products in your shop. Just a click and your wish comes true. Enable the option "Hide Price" and it\'s done!','ywraq');?></p>
             </div>
         </div>
     </div>

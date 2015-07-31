@@ -19,7 +19,7 @@ $user_email = ( ! empty( $current_user ) ) ?  $current_user->user_email : '';
     <h3><?php _e( 'Send the request', 'ywraq' ) ?></h3>
 
     <form id="yith-ywraq-mail-form" name="yith-ywraq-mail-form" action="<?php echo esc_url( YITH_Request_Quote()->get_raq_page_url() ) ?>" method="post">
-        <
+
             <p class="form-row form-row-wide validate-required" id="rqa_name_row">
                 <label for="rqa-name" class=""><?php _e( 'Name', 'ywraq' ) ?>
                     <abbr class="required" title="required">*</abbr></label>
