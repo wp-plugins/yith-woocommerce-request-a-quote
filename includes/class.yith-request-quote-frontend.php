@@ -181,6 +181,7 @@ if ( !class_exists( 'YITH_YWRAQ_Frontend' ) ) {
                 'rqa_url'       => YITH_Request_Quote()->get_raq_page_url(),
                 'exists'        => ( $product->product_type == 'variable' ) ? false : YITH_Request_Quote()->exists( $product->id )
             );
+            do_action_ref_array('ywraq_add_to_quote_link', array(&$args));
             $args['args'] = $args;
 
             wc_get_template('add-to-quote.php', $args, YITH_YWRAQ_DIR, YITH_YWRAQ_DIR);
